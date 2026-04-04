@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ciru5poc6apeb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_his7f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ogr1"]
+load_path = "res://.godot/imported/background.png-4fa92766cad903a1a79b587b09bd47c5.ctex"
+
+[node name="Node2D" type="Node2D" unique_id=1045462043]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1393981225]
+position = Vector2(1750, 500)
+rotation = 3.1415927
+scale = Vector2(3500, 1000)
+mesh = SubResource("QuadMesh_his7f")
+texture = SubResource("CompressedTexture2D_0ogr1")
