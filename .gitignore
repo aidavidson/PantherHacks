@@ -2,6 +2,7 @@
 .godot/
 .nomedia
 .DS_Store
+.tmp
 
 # Godot-specific ignores
 .import/
