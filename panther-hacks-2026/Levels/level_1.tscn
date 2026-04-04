@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Temp_Player/temp_user.tscn" id="1_n0qsc"]
 [ext_resource type="PackedScene" uid="uid://bcdf5uvgchy1v" path="res://Background/background.tscn" id="2_dilhk"]
 [ext_resource type="PackedScene" uid="uid://cwfmyylcbvuxb" path="res://Obstacles/obstacles.tscn" id="3_3mhv4"]
+[ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://Fish/fish.tscn" id="4_rf6l5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6uo5"]
 size = Vector2(2003, 67)
@@ -79,3 +80,6 @@ position = Vector2(73, 336)
 
 [node name="Obstacles" parent="." unique_id=432730098 instance=ExtResource("3_3mhv4")]
 position = Vector2(0, 1)
+
+[node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("4_rf6l5")]
+position = Vector2(468, 493)
