@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://2l5mw1hsoisb"]
+
+[ext_resource type="Script" uid="uid://rb1avofaj6cp" path="res://trash.gd" id="1_43he1"]
+[ext_resource type="Texture2D" uid="uid://cn46d2xje5r6i" path="res://Sprites/Trash.png" id="2_76yqg"]
+
+[node name="Trash" type="StaticBody2D" unique_id=1892575645]
+script = ExtResource("1_43he1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1139453992]
+texture = ExtResource("2_76yqg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=830831647]
+polygon = PackedVector2Array(20, -28, -2, -9, -26, -17, -32, -16, -40, -8, -44, 4, -44, 20, -15, 28, 8, 28, 36, 17, 48, 4, 49, -8, 44, -15, 32, -28)
