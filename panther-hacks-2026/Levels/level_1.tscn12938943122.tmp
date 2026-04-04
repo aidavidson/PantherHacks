@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://c0j20g3c0y206"]
+
+[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Temp_Player/temp_user.tscn" id="1_n0qsc"]
+[ext_resource type="PackedScene" uid="uid://bcdf5uvgchy1v" path="res://Background/background.tscn" id="2_dilhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6uo5"]
+size = Vector2(1997, 69)
+
+[sub_resource type="QuadMesh" id="QuadMesh_n0qsc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syshm"]
+size = Vector2(999, 67)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rfktq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0urlm"]
+size = Vector2(999, 87)
+
+[sub_resource type="QuadMesh" id="QuadMesh_77x7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0qsc"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dilhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dilhk"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3mhv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhv4"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rf6l5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf6l5"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_syshm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfktq"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0urlm"]
+
+[node name="Level 1" type="Node2D" unique_id=945115660]
+
+[node name="Backgroud" parent="." unique_id=1045462043 instance=ExtResource("2_dilhk")]
+z_index = -1
+position = Vector2(-5, 0)
+
+[node name="Aquarium Floor" type="StaticBody2D" parent="." unique_id=882233560]
+position = Vector2(274, 440)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium Floor" unique_id=19365178]
+position = Vector2(718.5, 594)
+shape = SubResource("RectangleShape2D_m6uo5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium Floor" unique_id=1663132457]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(718, 594)
+rotation = 3.1415927
+scale = Vector2(2000, -71.615)
+mesh = SubResource("QuadMesh_n0qsc")
+
+[node name="Aquarium WallR" type="StaticBody2D" parent="." unique_id=212098550]
+position = Vector2(2626, -63)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium WallR" unique_id=987123373]
+position = Vector2(561.5, 593.5)
+shape = SubResource("RectangleShape2D_syshm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium WallR" unique_id=311454672]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(598.2405, 594)
+rotation = 3.1415927
+scale = Vector2(1072.7544, -71.615)
+mesh = SubResource("QuadMesh_rfktq")
+
+[node name="Aquarium WallL" type="StaticBody2D" parent="." unique_id=626759627]
+position = Vector2(760, -172)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium WallL" unique_id=983071065]
+position = Vector2(-806.5, 672.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_0urlm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium WallL" unique_id=735094087]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-805, 706.4271)
+rotation = 1.5707964
+scale = Vector2(1068.5443, -88.876)
+mesh = SubResource("QuadMesh_77x7w")
+
+[node name="Obstacle" type="StaticBody2D" parent="." unique_id=905176711]
+position = Vector2(-189, 152)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle" unique_id=1545069078]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_n0qsc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle" unique_id=1103847319]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_dilhk")
+
+[node name="Obstacle2" type="StaticBody2D" parent="." unique_id=1796811422]
+position = Vector2(-190, 525)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2" unique_id=1007084189]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_dilhk")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle2" unique_id=119078951]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_3mhv4")
+
+[node name="Obstacle3" type="StaticBody2D" parent="." unique_id=2031450005]
+position = Vector2(437, 259)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle3" unique_id=147275056]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_3mhv4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle3" unique_id=1237156615]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_rf6l5")
+
+[node name="Obstacle4" type="StaticBody2D" parent="." unique_id=362884913]
+position = Vector2(764, 440)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4" unique_id=353572005]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_rf6l5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle4" unique_id=403650429]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_syshm")
+
+[node name="Obstacle5" type="StaticBody2D" parent="." unique_id=974635378]
+position = Vector2(946, 469)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle5" unique_id=270020822]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_rfktq")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle5" unique_id=1817429578]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_0urlm")
+
+[node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("1_n0qsc")]
+speed = 100
