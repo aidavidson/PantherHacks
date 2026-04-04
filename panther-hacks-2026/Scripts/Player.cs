@@ -7,6 +7,8 @@ public partial class Player : CharacterBody2D
 	public int bagCapacity = 20;
 	public int seaLevel = 0;
 	
+	//Texture2D leftTexture = GD.Load<Texture2D>();
+	//Texture2D rightTexture = GD.Load<Texture2D>();
 	
 	
 	public int handmadeTimer;
@@ -60,6 +62,7 @@ public partial class Player : CharacterBody2D
 	
 	
 	// handle player movement
+	/*
 	private void HandleMovement(double delta){
 		float Xmovement = 0f;
 		float Ymovement = 0f;
@@ -68,13 +71,34 @@ public partial class Player : CharacterBody2D
 		}else if(Input.IsKeyPressed(Key.S)){
 			Ymovement = +1f;
 		}else if(Input.IsKeyPressed(Key.A)){
+			
 			Xmovement = -1f;
 		}else if(Input.IsKeyPressed(Key.D)){
+			
 			Xmovement = +1f;
 		}
 		Vector2 MoveDirection = new Vector2(Xmovement, Ymovement).Normalized();
 		Position += MoveDirection * playerSpeed * (float)delta;
 	}
+	*/
+	private void HandleMovement(double delta){
+		Vector2 velocity = Vector2.Zero;
+		if(Input.IsKeyPressed(Key.W)){
+			velocity.Y = -1f;
+		}else if(Input.IsKeyPressed(Key.S)){
+			velocity.Y = +1f;
+		}else if(Input.IsKeyPressed(Key.A)){
+			
+			velocity.X = -1f;
+		}else if(Input.IsKeyPressed(Key.D)){
+			
+			velocity.X = +1f;
+		}
+		velocity = velocity.Normalized()*playerSpeed;
+		Velocity = velocity;
+		MoveAndSlide();
+	}
+	
 	
 	// manages the oxygen of the player
 	private int OxygenManagement(int timer){
