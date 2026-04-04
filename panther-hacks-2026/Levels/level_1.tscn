@@ -3,101 +3,64 @@
 [ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Temp_Player/temp_user.tscn" id="1_n0qsc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6uo5"]
-size = Vector2(5998, 69)
+size = Vector2(1997, 69)
 
 [sub_resource type="QuadMesh" id="QuadMesh_n0qsc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0qsc"]
-size = Vector2(1063, 74)
-
-[sub_resource type="QuadMesh" id="QuadMesh_dilhk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhv4"]
-size = Vector2(1063, 74)
-
-[sub_resource type="QuadMesh" id="QuadMesh_rf6l5"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syshm"]
-size = Vector2(1063, 74)
+size = Vector2(999, 67)
 
 [sub_resource type="QuadMesh" id="QuadMesh_rfktq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0urlm"]
-size = Vector2(1046, 90)
+size = Vector2(999, 87)
 
 [sub_resource type="QuadMesh" id="QuadMesh_77x7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0qsc"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dilhk"]
 
 [node name="Level 1" type="Node2D" unique_id=945115660]
 
 [node name="Aquarium Floor" type="StaticBody2D" parent="." unique_id=882233560]
-position = Vector2(2281, 438)
+position = Vector2(278, 368)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium Floor" unique_id=19365178]
-position = Vector2(718, 594)
+position = Vector2(718.5, 594)
 shape = SubResource("RectangleShape2D_m6uo5")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium Floor" unique_id=1663132457]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(718, 594)
 rotation = 3.1415927
-scale = Vector2(6000, -71.615)
+scale = Vector2(2000, -71.615)
 mesh = SubResource("QuadMesh_n0qsc")
 
-[node name="Aquarium WallR" type="StaticBody2D" parent="." unique_id=1014065228]
-position = Vector2(6565, -25)
-rotation = 1.5707964
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium WallR" unique_id=1753167531]
-position = Vector2(553.5001, 594)
-shape = SubResource("RectangleShape2D_n0qsc")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium WallR" unique_id=1772037786]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(561.8633, 594)
-rotation = 3.1415927
-scale = Vector2(1069.6349, -71.614746)
-mesh = SubResource("QuadMesh_dilhk")
-
-[node name="Aquarium WallR2" type="StaticBody2D" parent="." unique_id=637699544]
-position = Vector2(6084, -287)
-rotation = 1.5707964
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium WallR2" unique_id=1802916490]
-position = Vector2(553.5001, 594)
-shape = SubResource("RectangleShape2D_3mhv4")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium WallR2" unique_id=779487082]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(561.8633, 594)
-rotation = 3.1415927
-scale = Vector2(1069.6349, -71.614746)
-mesh = SubResource("QuadMesh_rf6l5")
-
 [node name="Aquarium WallR3" type="StaticBody2D" parent="." unique_id=212098550]
-position = Vector2(4488.645, -255.365)
+position = Vector2(2626, -63)
 rotation = 1.5707964
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium WallR3" unique_id=987123373]
-position = Vector2(553.5001, 594)
+position = Vector2(561.5, 593.5)
 shape = SubResource("RectangleShape2D_syshm")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Aquarium WallR3" unique_id=311454672]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(561.8633, 594)
 rotation = 3.1415927
-scale = Vector2(1069.6349, -71.614746)
+scale = Vector2(1000, -71.615)
 mesh = SubResource("QuadMesh_rfktq")
 
 [node name="Aquarium WallL" type="StaticBody2D" parent="." unique_id=626759627]
-position = Vector2(760, -138)
+position = Vector2(760, -172)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium WallL" unique_id=983071065]
-position = Vector2(-805, 665)
+position = Vector2(-806.5, 672.5)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_0urlm")
 
@@ -105,7 +68,21 @@ shape = SubResource("RectangleShape2D_0urlm")
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-805, 672.15497)
 rotation = 1.5707964
-scale = Vector2(1064.9272, -88.87622)
+scale = Vector2(1000, -88.876)
 mesh = SubResource("QuadMesh_77x7w")
 
 [node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("1_n0qsc")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=905176711]
+position = Vector2(633, 345)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1545069078]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_n0qsc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1103847319]
+modulate = Color(0.27450982, 0.101960786, 1, 1)
+position = Vector2(274, 281)
+scale = Vector2(169.5, 27.5)
+mesh = SubResource("QuadMesh_dilhk")

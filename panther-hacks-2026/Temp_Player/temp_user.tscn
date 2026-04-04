@@ -4,21 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://dn1mwbljpxqqf" path="res://icon.svg" id="1_mqr3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44y5b"]
-size = Vector2(128, 126.75)
+size = Vector2(66, 66)
 
 [node name="Temp_User" type="CharacterBody2D" unique_id=1841695308]
 script = ExtResource("1_eu1wl")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=118352528]
-position = Vector2(452, 265)
+position = Vector2(421, 233.5)
+scale = Vector2(0.515625, 0.5078125)
 texture = ExtResource("1_mqr3y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335480751]
-position = Vector2(452, 265)
+position = Vector2(421, 233)
 shape = SubResource("RectangleShape2D_44y5b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=328937896]
-position = Vector2(452, 265)
+position = Vector2(421, 233)
+zoom = Vector2(2.455, 2.455)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
