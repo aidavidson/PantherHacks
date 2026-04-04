@@ -4,11 +4,11 @@ using System;
 public partial class Trash : StaticBody2D
 {
 	// Called when the node enters the scene tree for the first time.
-	private Area2D _triggerArea;
+	private Area2D _area2D;
 	public override void _Ready()
 	{
-		_triggerArea = GetNode<Area2D>("TriggerArea");
-		_triggerArea.BodyEntered += OnTrashBodyEntered;
+		_area2D = GetNode<Area2D>("Area2D");
+		_area2D.BodyEntered += OnBodyEntered;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,10 +16,16 @@ public partial class Trash : StaticBody2D
 	{
 		
 	}
-	private void OnTrashBodyEntered(Node body){
-		if(body is CharacterBody2D player){
-				GD.Print("trash is touched");
+	private void OnBodyEntered(Node body){
+		
+		if(body is Player){
+			if(Player.Instance.objsInBag < Player.Instance.bagCapacity){
+				GD.Print("Entered");
+				Player.Instance.objsInBag += 1;
+				Player.Instance.playerSpeed -= 10f;
 				QueueFree();
+				GD.Print(Player.Instance.objsInBag);
+			}
 			
 		}
 		

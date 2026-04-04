@@ -3,17 +3,28 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public float playerSpeed;
+	// constants
+	public int bagCapacity = 20;
+	public int seaLevel = 0;
+	
+	
+	
 	public int handmadeTimer;
+	
+	
+	//player survival vars
 	public int Oxygen;
 	public int Health;
 	
+	
+	//variables controlled by outside collisions
+	public float playerSpeed;
 	public int objsInBag;
 	public int fishSaved;
-	public const int bagCapacity = 20;
-	public const int seaLevel = 0;
-
-
+	
+	//manipulator of player class for the variables controlled by collisions
+	public static Player Instance;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -22,6 +33,7 @@ public partial class Player : CharacterBody2D
 		Health = 100;
 		objsInBag = 0;
 		fishSaved = 0;
+		Instance = this;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,6 +43,7 @@ public partial class Player : CharacterBody2D
 			HandleMovement(delta);
 			handmadeTimer++;
 			handmadeTimer = OxygenManagement(handmadeTimer);
+			//GD.Print(playerSpeed);
 		}else{
 			//figure out later
 			GD.Print("player is dead");
@@ -38,6 +51,13 @@ public partial class Player : CharacterBody2D
 		
 		
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	// handle player movement
 	private void HandleMovement(double delta){
@@ -60,17 +80,18 @@ public partial class Player : CharacterBody2D
 	private int OxygenManagement(int timer){
 		
 		if(Position.Y <= seaLevel){
+			//will be tied to the boat soon
 			Oxygen = 100;
+			objsInBag = 0;
+			
 		}
 		if((timer % 100) == 0){
 			Oxygen--;
-			GD.Print(Oxygen);
+			//GD.Print(Oxygen);
 			return 0;
 		}
 		return timer;
 	}
-	private void CheckForObject(){
-		
-	}
+	
 
 }
