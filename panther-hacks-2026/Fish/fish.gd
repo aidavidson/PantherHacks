@@ -9,7 +9,7 @@ class_name Fish
 func _ready() -> void:
 	moveRandomly()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var move = true
 	for body in area.get_overlapping_bodies():
 		if body is Trash:
