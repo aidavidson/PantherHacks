@@ -7,10 +7,10 @@ public partial class Player : CharacterBody2D
 	public int bagCapacity = 20;
 	public int seaLevel = 0;
 	
-	//Texture2D leftTexture = GD.Load<Texture2D>();
-	//Texture2D rightTexture = GD.Load<Texture2D>();
-	
-	
+	private Sprite2D _sprite;
+	private Texture2D _leftTexture;
+	private Texture2D _rightTexture;
+		
 	public int handmadeTimer;
 	
 	
@@ -30,6 +30,9 @@ public partial class Player : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_sprite = GetNode<Sprite2D>("Sprite2D");
+		_rightTexture = GD.Load<Texture2D>("res://Sprites/Diver-1-Right.png");
+		_leftTexture = GD.Load<Texture2D>("res://Sprites/Diver1_big.png");
 		playerSpeed = 300f;
 		Oxygen = 100;
 		Health = 100;
@@ -45,7 +48,6 @@ public partial class Player : CharacterBody2D
 			HandleMovement(delta);
 			handmadeTimer++;
 			handmadeTimer = OxygenManagement(handmadeTimer);
-			//GD.Print(playerSpeed);
 		}else{
 			//figure out later
 			GD.Print("player is dead");
@@ -62,25 +64,6 @@ public partial class Player : CharacterBody2D
 	
 	
 	// handle player movement
-	/*
-	private void HandleMovement(double delta){
-		float Xmovement = 0f;
-		float Ymovement = 0f;
-		if(Input.IsKeyPressed(Key.W)){
-			Ymovement = -1f;
-		}else if(Input.IsKeyPressed(Key.S)){
-			Ymovement = +1f;
-		}else if(Input.IsKeyPressed(Key.A)){
-			
-			Xmovement = -1f;
-		}else if(Input.IsKeyPressed(Key.D)){
-			
-			Xmovement = +1f;
-		}
-		Vector2 MoveDirection = new Vector2(Xmovement, Ymovement).Normalized();
-		Position += MoveDirection * playerSpeed * (float)delta;
-	}
-	*/
 	private void HandleMovement(double delta){
 		Vector2 velocity = Vector2.Zero;
 		if(Input.IsKeyPressed(Key.W)){
@@ -88,13 +71,13 @@ public partial class Player : CharacterBody2D
 		}else if(Input.IsKeyPressed(Key.S)){
 			velocity.Y = +1f;
 		}else if(Input.IsKeyPressed(Key.A)){
-			
+			_sprite.Texture = _leftTexture;
 			velocity.X = -1f;
-		}else if(Input.IsKeyPressed(Key.D)){
-			
+		}else if(Input.IsKeyPressed(Key.D)){		
+			_sprite.Texture = _rightTexture;
 			velocity.X = +1f;
 		}
-		velocity = velocity.Normalized()*playerSpeed;
+		velocity = velocity.Normalized() * playerSpeed;
 		Velocity = velocity;
 		MoveAndSlide();
 	}

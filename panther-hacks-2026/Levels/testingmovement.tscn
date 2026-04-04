@@ -39,7 +39,9 @@ position = Vector2(11, -4)
 shape = SubResource("RectangleShape2D_ctxkg")
 
 [node name="Trash" parent="." unique_id=1892575645 instance=ExtResource("3_qatc3")]
-position = Vector2(222, 253)
+position = Vector2(251, 92)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_wbkl7")
 
 [node name="Area2D" type="Area2D" parent="Trash" unique_id=1545241527]
@@ -50,18 +52,22 @@ rotation = 1.5397466
 shape = SubResource("CapsuleShape2D_ctxkg")
 
 [node name="Trash2" parent="." unique_id=2145907134 instance=ExtResource("3_qatc3")]
-position = Vector2(614, 449)
+position = Vector2(137, 147)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("3_wbkl7")
 
 [node name="Area2D" type="Area2D" parent="Trash2" unique_id=1740778980]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trash2/Area2D" unique_id=51320216]
-position = Vector2(6.999999, 1.9999995)
+position = Vector2(1.0000308, -1.000001)
 rotation = 1.5397466
 shape = SubResource("CapsuleShape2D_ctxkg")
 
 [node name="Trash3" parent="." unique_id=777362265 instance=ExtResource("3_qatc3")]
 position = Vector2(299, 439)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_wbkl7")
 
 [node name="Area2D" type="Area2D" parent="Trash3" unique_id=139782301]
@@ -73,6 +79,8 @@ shape = SubResource("CapsuleShape2D_ctxkg")
 
 [node name="Trash4" parent="." unique_id=1611466397 instance=ExtResource("3_qatc3")]
 position = Vector2(418, 337)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_wbkl7")
 
 [node name="Area2D" type="Area2D" parent="Trash4" unique_id=1322692745]
@@ -84,3 +92,10 @@ shape = SubResource("CapsuleShape2D_ctxkg")
 
 [node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("5_wbkl7")]
 position = Vector2(138, 146)
+collision_layer = 0
+
+[node name="Area2D" parent="Fish" index="3" unique_id=909773948]
+collision_layer = 0
+collision_mask = 2
+
+[editable path="Fish"]
