@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnpmn2ih54bio"]
 
 [ext_resource type="Script" uid="uid://cw47vt8oqncek" path="res://enemy_fish.gd" id="1_s7mr6"]
+[ext_resource type="Texture2D" uid="uid://dn1mwbljpxqqf" path="res://icon.svg" id="2_kb3fs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kb3fs"]
 
@@ -10,11 +11,14 @@ radius = 300.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hvdr"]
 
 [node name="Node2D" type="Node2D" unique_id=122337866]
+position = Vector2(820, 353)
 
 [node name="EnemyFish" type="CharacterBody2D" parent="." unique_id=2121178822]
+position = Vector2(38, 0)
 script = ExtResource("1_s7mr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="EnemyFish" unique_id=164917931]
+texture = ExtResource("2_kb3fs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFish" unique_id=77090441]
 shape = SubResource("CircleShape2D_kb3fs")
@@ -27,4 +31,5 @@ shape = SubResource("CircleShape2D_c1g3r")
 [node name="HitboxArea" type="Area2D" parent="EnemyFish" unique_id=502823126]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyFish/HitboxArea" unique_id=1218797468]
+position = Vector2(-4, 4)
 shape = SubResource("CircleShape2D_8hvdr")
