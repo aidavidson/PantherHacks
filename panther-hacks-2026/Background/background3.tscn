@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dakop4aqcfia1"]
+
+[ext_resource type="PackedScene" uid="uid://ciru5poc6apeb" path="res://Background/background2.tscn" id="1_muawc"]
+
+[node name="Node2D" unique_id=1045462043 instance=ExtResource("1_muawc")]
+
+[node name="MeshInstance2D" parent="." index="0" unique_id=1393981225]
+position = Vector2(2500.0002, 500)
+scale = Vector2(5000, 1000)
