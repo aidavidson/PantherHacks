@@ -17,10 +17,28 @@ size = Vector2(999, 87)
 
 [sub_resource type="QuadMesh" id="QuadMesh_77x7w"]
 
+[sub_resource type="GDScript" id="GDScript_n0qsc"]
+script/source = "extends StaticBody2D
+
+var new_body = self.duplicate(15)
+new_body.position += Vector2(100, 0)
+get_parent().add_child(new_body)
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0qsc"]
 size = Vector2(170, 28)
 
 [sub_resource type="QuadMesh" id="QuadMesh_dilhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dilhk"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3mhv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhv4"]
+size = Vector2(170, 28)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rf6l5"]
 
 [node name="Level 1" type="Node2D" unique_id=945115660]
 
@@ -72,17 +90,66 @@ scale = Vector2(1000, -88.876)
 mesh = SubResource("QuadMesh_77x7w")
 
 [node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("1_n0qsc")]
+speed = 100
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=905176711]
-position = Vector2(633, 345)
+[node name="Obstacle" type="StaticBody2D" parent="." unique_id=905176711]
+position = Vector2(-189, 152)
+script = SubResource("GDScript_n0qsc")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1545069078]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle" unique_id=1545069078]
 position = Vector2(274, 281)
 shape = SubResource("RectangleShape2D_n0qsc")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1103847319]
-modulate = Color(0.27450982, 0.101960786, 1, 1)
-position = Vector2(274, 281)
-scale = Vector2(169.5, 27.5)
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle" unique_id=1103847319]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
 mesh = SubResource("QuadMesh_dilhk")
+
+[node name="Obstacle2" type="StaticBody2D" parent="." unique_id=1796811422]
+position = Vector2(-190, 525)
+script = SubResource("GDScript_n0qsc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2" unique_id=1007084189]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_dilhk")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle2" unique_id=119078951]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_3mhv4")
+
+[node name="Obstacle3" type="StaticBody2D" parent="." unique_id=2031450005]
+position = Vector2(437, 259)
+rotation = 1.5707964
+script = SubResource("GDScript_n0qsc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle3" unique_id=147275056]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_3mhv4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle3" unique_id=1237156615]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_rf6l5")
+
+[node name="Obstacle4" type="StaticBody2D" parent="." unique_id=362884913]
+position = Vector2(437, 259)
+rotation = 1.5707964
+script = SubResource("GDScript_n0qsc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4" unique_id=353572005]
+position = Vector2(274, 281)
+shape = SubResource("RectangleShape2D_3mhv4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle4" unique_id=403650429]
+modulate = Color(0.68120253, 0, 0.056724064, 1)
+position = Vector2(274, 282.125)
+scale = Vector2(169.5, 29.749985)
+mesh = SubResource("QuadMesh_rf6l5")
