@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bcdf5uvgchy1v"]
+
+[ext_resource type="Texture2D" uid="uid://d7drtk6apq04" path="res://Sprites/background.png" id="1_0ep0u"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_his7f"]
+
+[node name="Node2D" type="Node2D" unique_id=1045462043]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1393981225]
+position = Vector2(1005, 500)
+rotation = 3.1415927
+scale = Vector2(2000, 1000)
+mesh = SubResource("QuadMesh_his7f")
+texture = ExtResource("1_0ep0u")

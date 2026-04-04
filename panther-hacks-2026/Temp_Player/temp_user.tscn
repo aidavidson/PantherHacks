@@ -1,23 +1,22 @@
 [gd_scene format=3 uid="uid://cpennrmlscoyk"]
 
 [ext_resource type="Script" uid="uid://devdnpv5k47g2" path="res://Temp_Player/temp_user.gd" id="1_eu1wl"]
-[ext_resource type="Texture2D" uid="uid://b6gbbqiun6ded" path="res://Diver_1.png" id="2_eu1wl"]
+[ext_resource type="Texture2D" uid="uid://dkn6tyhc3yemi" path="res://Sprites/Diver1_big.png" id="2_eu1wl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44y5b"]
-size = Vector2(25, 9)
+size = Vector2(56, 19)
 
 [node name="Temp_User" type="CharacterBody2D" unique_id=1841695308]
-position = Vector2(-310, 132)
+position = Vector2(-313, 121)
 script = ExtResource("1_eu1wl")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=118352528]
-position = Vector2(421, 233.5)
-scale = Vector2(0.515625, 0.5078125)
+position = Vector2(396.5, 244.5)
+scale = Vector2(0.2929687, 0.30468753)
 texture = ExtResource("2_eu1wl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335480751]
-position = Vector2(421.5, 233.5)
+position = Vector2(397, 245)
 shape = SubResource("RectangleShape2D_44y5b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=328937896]
