@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cif8equa40lte"]
+
+[ext_resource type="Texture2D" uid="uid://dn1mwbljpxqqf" path="res://icon.svg" id="1_01jnm"]
+[ext_resource type="Script" uid="uid://c5xyksmhd7nuw" path="res://Scripts/Player.cs" id="2_80ido"]
+[ext_resource type="PackedScene" uid="uid://2l5mw1hsoisb" path="res://trash.tscn" id="3_qatc3"]
+[ext_resource type="Script" uid="uid://2dh0c311aabe" path="res://Scripts/Trash.cs" id="3_wbkl7"]
+[ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://fish.tscn" id="5_wbkl7"]
+[ext_resource type="Script" uid="uid://dd1c6kpvi3xdy" path="res://Scripts/Fish.cs" id="6_gr1xt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ido"]
+size = Vector2(120, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctxkg"]
+size = Vector2(149, 158)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctxkg"]
+radius = 24.987335
+height = 102.137146
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gr1xt"]
+radius = 35.014282
+
+[node name="Testingmovement" type="Node2D" unique_id=939707707]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1317044330]
+position = Vector2(571, 206)
+script = ExtResource("2_80ido")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1634804336]
+position = Vector2(20, -4)
+shape = SubResource("RectangleShape2D_80ido")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=185832362]
+position = Vector2(16, -4)
+texture = ExtResource("1_01jnm")
+
+[node name="Timer" type="Timer" parent="Player" unique_id=1745100757]
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=703750827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=655646582]
+position = Vector2(11, -4)
+shape = SubResource("RectangleShape2D_ctxkg")
+
+[node name="Trash" parent="." unique_id=1892575645 instance=ExtResource("3_qatc3")]
+position = Vector2(222, 253)
+script = ExtResource("3_wbkl7")
+
+[node name="Area2D" type="Area2D" parent="Trash" unique_id=1545241527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash/Area2D" unique_id=8032894]
+position = Vector2(6.999999, 1.9999995)
+rotation = 1.5397466
+shape = SubResource("CapsuleShape2D_ctxkg")
+
+[node name="Trash2" parent="." unique_id=2145907134 instance=ExtResource("3_qatc3")]
+position = Vector2(614, 449)
+script = ExtResource("3_wbkl7")
+
+[node name="Area2D" type="Area2D" parent="Trash2" unique_id=1740778980]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash2/Area2D" unique_id=51320216]
+position = Vector2(6.999999, 1.9999995)
+rotation = 1.5397466
+shape = SubResource("CapsuleShape2D_ctxkg")
+
+[node name="Trash3" parent="." unique_id=777362265 instance=ExtResource("3_qatc3")]
+position = Vector2(299, 439)
+script = ExtResource("3_wbkl7")
+
+[node name="Area2D" type="Area2D" parent="Trash3" unique_id=139782301]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash3/Area2D" unique_id=372322459]
+position = Vector2(6.999999, 1.9999995)
+rotation = 1.5397466
+shape = SubResource("CapsuleShape2D_ctxkg")
+
+[node name="Trash4" parent="." unique_id=1611466397 instance=ExtResource("3_qatc3")]
+position = Vector2(418, 337)
+script = ExtResource("3_wbkl7")
+
+[node name="Area2D" type="Area2D" parent="Trash4" unique_id=1322692745]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash4/Area2D" unique_id=258714019]
+position = Vector2(6.999999, 1.9999995)
+rotation = 1.5397466
+shape = SubResource("CapsuleShape2D_ctxkg")
+
+[node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("5_wbkl7")]
+position = Vector2(102, 79)
+script = ExtResource("6_gr1xt")
+
+[node name="Area2D2" type="Area2D" parent="Fish" unique_id=1775635517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish/Area2D2" unique_id=778247316]
+shape = SubResource("CircleShape2D_gr1xt")
