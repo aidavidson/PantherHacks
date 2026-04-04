@@ -7,20 +7,19 @@
 size = Vector2(56, 19)
 
 [node name="Temp_User" type="CharacterBody2D" unique_id=1841695308]
-position = Vector2(-313, 121)
+position = Vector2(96, 213)
 script = ExtResource("1_eu1wl")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=118352528]
-position = Vector2(396.5, 244.5)
+position = Vector2(2.3841858e-07, 1.9073486e-05)
 scale = Vector2(0.2929687, 0.30468753)
 texture = ExtResource("2_eu1wl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335480751]
-position = Vector2(397, 245)
 shape = SubResource("RectangleShape2D_44y5b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=328937896]
-position = Vector2(421, 233)
 zoom = Vector2(5, 5)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
