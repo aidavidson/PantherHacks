@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cif8equa40lte"]
+
+[ext_resource type="Texture2D" uid="uid://dn1mwbljpxqqf" path="res://icon.svg" id="1_01jnm"]
+[ext_resource type="Script" uid="uid://c5xyksmhd7nuw" path="res://Scripts/Player.cs" id="2_80ido"]
+[ext_resource type="Texture2D" uid="uid://y87mnu6uq3no" path="res://Sprites/endgame.png" id="3_qatc3"]
+[ext_resource type="Script" uid="uid://2dh0c311aabe" path="res://Scripts/Trash.cs" id="3_wbkl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ido"]
+size = Vector2(120, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qatc3"]
+size = Vector2(258, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctxkg"]
+size = Vector2(129, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbkl7"]
+size = Vector2(266, 184)
+
+[node name="Testingmovement" type="Node2D" unique_id=939707707]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1317044330]
+position = Vector2(571, 206)
+script = ExtResource("2_80ido")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1634804336]
+position = Vector2(20, -4)
+shape = SubResource("RectangleShape2D_80ido")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=185832362]
+position = Vector2(16, -4)
+texture = ExtResource("1_01jnm")
+
+[node name="Timer" type="Timer" parent="Player" unique_id=1745100757]
+
+[node name="InteractionZone" type="Area2D" parent="Player" unique_id=608156700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/InteractionZone" unique_id=584783936]
+position = Vector2(15, 9)
+shape = SubResource("RectangleShape2D_qatc3")
+
+[node name="Trash" type="StaticBody2D" parent="." unique_id=1416132974]
+position = Vector2(202, 155)
+script = ExtResource("3_wbkl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash" unique_id=53361040]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_ctxkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Trash" unique_id=1213373009]
+texture = ExtResource("1_01jnm")
+
+[node name="Fish" type="StaticBody2D" parent="." unique_id=1745197082]
+visible = false
+position = Vector2(113, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish" unique_id=2115664973]
+position = Vector2(264, 573)
+shape = SubResource("RectangleShape2D_wbkl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Fish/CollisionShape2D" unique_id=1999358650]
+position = Vector2(-2, 0)
+texture = ExtResource("3_qatc3")

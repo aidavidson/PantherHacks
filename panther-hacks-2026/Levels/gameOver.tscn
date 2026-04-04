@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mwo052ayabqe"]
+
+[ext_resource type="Texture2D" uid="uid://y87mnu6uq3no" path="res://Sprites/endgame.png" id="1_3bvjq"]
+
+[node name="GameOver" type="Node2D" unique_id=1074443442]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1049981684]
+position = Vector2(562, 284)
+
+[node name="Endgame" type="Sprite2D" parent="." unique_id=751707273]
+position = Vector2(578, 327.5)
+scale = Vector2(4.3787875, 3.4083765)
+texture = ExtResource("1_3bvjq")

@@ -7,6 +7,12 @@ public partial class Player : CharacterBody2D
 	public int handmadeTimer;
 	public int Oxygen;
 	public int Health;
+	
+	public int objsInBag;
+	public int fishSaved;
+	public const int bagCapacity = 20;
+	public const int seaLevel = 0;
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -14,6 +20,8 @@ public partial class Player : CharacterBody2D
 		playerSpeed = 300f;
 		Oxygen = 100;
 		Health = 100;
+		objsInBag = 0;
+		fishSaved = 0;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +38,8 @@ public partial class Player : CharacterBody2D
 		
 		
 	}
+	
+	// handle player movement
 	private void HandleMovement(double delta){
 		float Xmovement = 0f;
 		float Ymovement = 0f;
@@ -45,9 +55,11 @@ public partial class Player : CharacterBody2D
 		Vector2 MoveDirection = new Vector2(Xmovement, Ymovement).Normalized();
 		Position += MoveDirection * playerSpeed * (float)delta;
 	}
+	
+	// manages the oxygen of the player
 	private int OxygenManagement(int timer){
 		
-		if(Position.Y <= 0){
+		if(Position.Y <= seaLevel){
 			Oxygen = 100;
 		}
 		if((timer % 100) == 0){
@@ -57,4 +69,8 @@ public partial class Player : CharacterBody2D
 		}
 		return timer;
 	}
+	private void CheckForObject(){
+		
+	}
+
 }
