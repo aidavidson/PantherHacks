@@ -107,6 +107,7 @@ public partial class Player : CharacterBody2D
 				GD.Print(globalMenu.Get("level3Unlocked"));
 			}
 			GetTree().ChangeSceneToFile("res://Menu/menu.tscn");
+			//test comment for github
 		}
 	}
 	
