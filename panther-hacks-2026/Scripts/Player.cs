@@ -7,9 +7,13 @@ public partial class Player : CharacterBody2D
 	public int bagCapacity = 20;
 	public int seaLevel = 0;
 	
-	
-	
-	public int handmadeTimer;
+	private Sprite2D _sprite;
+	private Texture2D _leftTexture;
+	private Texture2D _rightTexture;
+		
+		
+	public int OxygenTimer;
+	public int DamageTimer;
 	
 	
 	//player survival vars
@@ -28,6 +32,17 @@ public partial class Player : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		this.AddToGroup("player");
+		
+		_sprite = GetNode<Sprite2D>("Sprite2D");
+		_rightTexture = GD.Load<Texture2D>("res://Sprites/Diver-1-Right.png");
+		_leftTexture = GD.Load<Texture2D>("res://Sprites/Diver1_big.png");
+		
+		
+	
+		
+		
+		
 		playerSpeed = 300f;
 		Oxygen = 100;
 		Health = 100;
@@ -39,15 +54,20 @@ public partial class Player : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		GD.Print($"DEATH CAUSE - Health: {Health}, Oxygen: {Oxygen}");
+	
 		if(Oxygen > 0 && Health > 0){
 			HandleMovement(delta);
-			handmadeTimer++;
-			handmadeTimer = OxygenManagement(handmadeTimer);
-			//GD.Print(playerSpeed);
+			OxygenTimer++;
+			OxygenTimer = OxygenManagement(OxygenTimer);
+			DamageTimer++;
+			DamageTimer = EnemyDamageHandling(DamageTimer);
 		}else{
 			//figure out later
-			GD.Print("player is dead");
+			GD.Print("I am not commented");
 		}
+		
+		
 		
 		
 	}
@@ -61,24 +81,26 @@ public partial class Player : CharacterBody2D
 	
 	// handle player movement
 	private void HandleMovement(double delta){
-		float Xmovement = 0f;
-		float Ymovement = 0f;
+		Vector2 velocity = Vector2.Zero;
 		if(Input.IsKeyPressed(Key.W)){
-			Ymovement = -1f;
+			velocity.Y = -1f;
 		}else if(Input.IsKeyPressed(Key.S)){
-			Ymovement = +1f;
+			velocity.Y = +1f;
 		}else if(Input.IsKeyPressed(Key.A)){
-			Xmovement = -1f;
-		}else if(Input.IsKeyPressed(Key.D)){
-			Xmovement = +1f;
+			_sprite.Texture = _leftTexture;
+			velocity.X = -1f;
+		}else if(Input.IsKeyPressed(Key.D)){		
+			_sprite.Texture = _rightTexture;
+			velocity.X = +1f;
 		}
-		Vector2 MoveDirection = new Vector2(Xmovement, Ymovement).Normalized();
-		Position += MoveDirection * playerSpeed * (float)delta;
+		velocity = velocity.Normalized() * playerSpeed;
+		Velocity = velocity;
+		MoveAndSlide();
 	}
+	
 	
 	// manages the oxygen of the player
 	private int OxygenManagement(int timer){
-		
 		if(Position.Y <= seaLevel){
 			//will be tied to the boat soon
 			Oxygen = 100;
@@ -89,6 +111,20 @@ public partial class Player : CharacterBody2D
 			Oxygen--;
 			//GD.Print(Oxygen);
 			return 0;
+		}
+		return timer;
+	}
+	
+	private int EnemyDamageHandling(int timer){
+		for(int i = 0; i < GetSlideCollisionCount(); i++){
+			KinematicCollision2D collision = GetSlideCollision(i);
+			Node collider = (Node)collision.GetCollider();
+			if(collider.IsInGroup("Enemy")){
+				if((timer % 100) == 0){
+					Health -= 5;
+					return 0;
+				}
+			}
 		}
 		return timer;
 	}

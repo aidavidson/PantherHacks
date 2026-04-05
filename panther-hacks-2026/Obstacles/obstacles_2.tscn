@@ -202,7 +202,7 @@ position = Vector2(274.00003, 282)
 shape = SubResource("RectangleShape2D_5yfph")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle27" unique_id=1555191305]
-modulate = Color(0.68120253, 0, 0.056724064, 1)
+modulate = Color(0.68235296, 0, 0.05490196, 1)
 position = Vector2(274, 281.90738)
 scale = Vector2(170, 30)
 mesh = SubResource("QuadMesh_w6yvm")
@@ -478,8 +478,8 @@ shape = SubResource("RectangleShape2D_vwoth")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle46" unique_id=2103304706]
 modulate = Color(0.68120253, 0, 0.056724064, 1)
-position = Vector2(201.46048, 281.90738)
-scale = Vector2(315.07904, 30)
+position = Vector2(201.68893, 281.90738)
+scale = Vector2(315.53595, 30)
 mesh = SubResource("QuadMesh_7fwi2")
 
 [node name="Obstacle47" type="StaticBody2D" parent="." unique_id=1036360836]
@@ -525,7 +525,7 @@ scale = Vector2(170, 30)
 mesh = SubResource("QuadMesh_7fwi2")
 
 [node name="Obstacle50" type="StaticBody2D" parent="." unique_id=806330670]
-position = Vector2(1680, 307)
+position = Vector2(1681, 306)
 rotation = 1.5707964
 metadata/_edit_group_ = true
 
@@ -535,6 +535,6 @@ shape = SubResource("RectangleShape2D_e2f6r")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Obstacle50" unique_id=1340892637]
 modulate = Color(0.68120253, 0, 0.056724064, 1)
-position = Vector2(200.79498, 281.90738)
-scale = Vector2(316.41, 30)
+position = Vector2(200.9526, 281.90738)
+scale = Vector2(316.72525, 30)
 mesh = SubResource("QuadMesh_7fwi2")

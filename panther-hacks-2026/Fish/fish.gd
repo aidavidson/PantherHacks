@@ -9,7 +9,7 @@ class_name Fish
 func _ready() -> void:
 	moveRandomly()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var move = true
 	for body in area.get_overlapping_bodies():
 		if body is Trash:
@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	
 func moveRandomly():
-	print("move")
 	var speed = randf_range(150, 250)
 	var angle = randf_range(0, 2*PI)
 	velocity[0] = speed*cos(angle)
