@@ -3,19 +3,25 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	// constants
-	public int bagCapacity = 20;
-	public int seaLevel = 0;
-	
-	private Sprite2D _sprite;
-	private Texture2D _leftTexture;
-	private Texture2D _rightTexture;
-	
+	// harpoon code
 	[Export] public PackedScene projectileScene; // drag your harpoon.tscn here
 	public float harpoonSpeed = 500f;    // optional: speed of the harpoon
 	private float reloadTimer = 0f;               // internal timer for cooldown
 	[Export] public float reloadTime = 0.2f;      // time between shots
 	
+	
+	
+	
+	// constants
+	public int bagCapacity = 20;
+	public int seaLevel = 0;
+	
+	// instance texture and sprite variables for changes
+	private Sprite2D _sprite;
+	private Texture2D _leftTexture;
+	private Texture2D _rightTexture;
+	
+	// timer and reload code
 	public int OxygenTimer;
 	public int DamageTimer;
 	private float _timer = 0f;
@@ -41,7 +47,7 @@ public partial class Player : CharacterBody2D
 	{
 		//player is classified as a player
 		this.AddToGroup("player");
-		
+		Instance = this;
 		//sprite node
 		_sprite = GetNode<Sprite2D>("Sprite2D");
 		//player textures
@@ -63,8 +69,9 @@ public partial class Player : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		
 		if(Oxygen > 0 && Health > 0){
-			LevelCompleted();
+			//LevelCompleted();
 			HandleMovement(delta);
 			OxygenTimer++;
 			OxygenTimer = OxygenManagement(OxygenTimer);
@@ -89,13 +96,16 @@ public partial class Player : CharacterBody2D
 	
 	
 	private void LevelCompleted(){
-		
+		int threshhold = 1;
 		Node globalMenu = GetNodeOrNull("/root/StartMenu");
-		if(totalTrash == 1){
-			if(globalMenu == null){
+		if(globalMenu == null){
 				GD.Print("null");
-			}
+		}
+		int Level = (int)globalMenu.Get("Level");
+		if(totalTrash == threshhold){
+			
 			GD.Print("hello");
+			
 			bool isLevel2Unlocked = (bool)globalMenu.Get("level2Unlocked");
 			if(isLevel2Unlocked == false){
 				globalMenu.Set("level2Unlocked", true);
@@ -144,12 +154,7 @@ public partial class Player : CharacterBody2D
 	
 	// manages the oxygen of the player
 	private int OxygenManagement(int timer){
-		if(Position.Y <= seaLevel){
-			//will be tied to the boat soon
-			Oxygen = 100;
-			objsInBag = 0;
-			
-		}
+		ResetValues();
 		if((timer % 100) == 0){
 			Oxygen--;
 			//GD.Print(Oxygen);
@@ -171,14 +176,20 @@ public partial class Player : CharacterBody2D
 		}
 		return timer;
 	}
+	
+	private void ResetValues(){
+		for(int i = 0; i < GetSlideCollisionCount(); i++){
+			KinematicCollision2D collision = GetSlideCollision(i);
+			Node collider = (Node)collision.GetCollider();
+			if(collider.IsInGroup("boat")){
+				Oxygen = 100;
+				objsInBag = 0;
+			}
+		}
+	}
 
 
 	private void ShootHarpoon(Vector2 MousePosition){
-		GD.Print("We In Da function");
-		if (projectileScene == null)
-		{
-			GD.PrintErr("CRITICAL: projectileScene is NULL! Check Inspector or File Path.");
-		}
 		Vector2 Direction = (MousePosition-GlobalPosition).Normalized();
 		var projectile = (RigidBody2D)projectileScene.Instantiate();
 		projectile.Position = GlobalPosition;

@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://Object_Scenes/fish.tscn" id="5_wbkl7"]
 [ext_resource type="PackedScene" uid="uid://bnpmn2ih54bio" path="res://Object_Scenes/EnemyFish.tscn" id="6_qf4a7"]
 [ext_resource type="Texture2D" uid="uid://jj4ds8hx7gm1" path="res://Sprites/Boat.png" id="7_c4ej0"]
+[ext_resource type="PackedScene" uid="uid://bugdc1k8jrksk" path="res://Object_Scenes/boat.tscn" id="8_lgr6r"]
+[ext_resource type="Script" uid="uid://ddehbtlhx0d7h" path="res://Object_Scenes/Boat.cs" id="9_t6cqp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qf4a7"]
 radius = 36.0
@@ -88,17 +90,6 @@ position = Vector2(-9.000003, 8)
 rotation = 1.5397466
 shape = SubResource("CapsuleShape2D_ctxkg")
 
-[node name="Trash4" parent="." unique_id=1611466397 instance=ExtResource("3_qatc3")]
-position = Vector2(461, 387)
-collision_mask = 2
-
-[node name="Area2D2" type="Area2D" parent="Trash4" unique_id=1322692745]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash4/Area2D2" unique_id=258714019]
-position = Vector2(6.999999, 1.9999995)
-rotation = 1.5397466
-shape = SubResource("CapsuleShape2D_ctxkg")
-
 [node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("5_wbkl7")]
 position = Vector2(-1311, 1123)
 collision_layer = 0
@@ -108,7 +99,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="Trash5" parent="." unique_id=1151633311 instance=ExtResource("3_qatc3")]
-position = Vector2(705, 304)
+position = Vector2(799, 356)
 
 [node name="Node2D" parent="." unique_id=122337866 instance=ExtResource("6_qf4a7")]
 position = Vector2(-1560, 637)
@@ -127,5 +118,10 @@ position = Vector2(469, 52)
 [node name="CollisionShape2D2" parent="Node2D/EnemyFish/HitboxArea" index="0" unique_id=1218797468]
 position = Vector2(-482, -50)
 
+[node name="Boat" parent="." unique_id=534186582 instance=ExtResource("8_lgr6r")]
+position = Vector2(594, -200)
+script = ExtResource("9_t6cqp")
+
 [editable path="Fish"]
 [editable path="Node2D"]
+[editable path="Boat"]
