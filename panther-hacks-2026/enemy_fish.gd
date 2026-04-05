@@ -12,10 +12,11 @@ var damage_timer: float = 0.0
 var chase_timer: float = 0.0  # tracks how long we've been chasing
 
 func _ready():
+	add_to_group("Enemy")
 	start_x = global_position.x
 	$DetectionArea.body_entered.connect(_on_body_entered)
 	$DetectionArea.body_exited.connect(_on_body_exited)
-	$HitboxArea.body_entered.connect(_on_hit)
+	#$HitboxArea.body_entered.connect(_on_hit)
 
 func _physics_process(delta):
 	damage_timer -= delta
@@ -73,9 +74,3 @@ func _on_body_exited(body):
 			moving_right = false
 		else:
 			moving_right = true
-
-func _on_hit(body):
-	if body.is_in_group("player"):
-		if damage_timer <= 0:
-			body.take_damage(damage)
-			damage_timer = 1.0

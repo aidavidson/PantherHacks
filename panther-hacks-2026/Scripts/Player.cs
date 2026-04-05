@@ -11,7 +11,9 @@ public partial class Player : CharacterBody2D
 	private Texture2D _leftTexture;
 	private Texture2D _rightTexture;
 		
-	public int handmadeTimer;
+		
+	public int OxygenTimer;
+	public int DamageTimer;
 	
 	
 	//player survival vars
@@ -30,9 +32,17 @@ public partial class Player : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		this.AddToGroup("player");
+		
 		_sprite = GetNode<Sprite2D>("Sprite2D");
 		_rightTexture = GD.Load<Texture2D>("res://Sprites/Diver-1-Right.png");
 		_leftTexture = GD.Load<Texture2D>("res://Sprites/Diver1_big.png");
+		
+		
+	
+		
+		
+		
 		playerSpeed = 300f;
 		Oxygen = 100;
 		Health = 100;
@@ -44,14 +54,20 @@ public partial class Player : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		GD.Print($"DEATH CAUSE - Health: {Health}, Oxygen: {Oxygen}");
+	
 		if(Oxygen > 0 && Health > 0){
 			HandleMovement(delta);
-			handmadeTimer++;
-			handmadeTimer = OxygenManagement(handmadeTimer);
+			OxygenTimer++;
+			OxygenTimer = OxygenManagement(OxygenTimer);
+			DamageTimer++;
+			DamageTimer = EnemyDamageHandling(DamageTimer);
 		}else{
 			//figure out later
-			GD.Print("player is dead");
+			GD.Print("I am not commented");
 		}
+		
+		
 		
 		
 	}
@@ -85,7 +101,6 @@ public partial class Player : CharacterBody2D
 	
 	// manages the oxygen of the player
 	private int OxygenManagement(int timer){
-		
 		if(Position.Y <= seaLevel){
 			//will be tied to the boat soon
 			Oxygen = 100;
@@ -96,6 +111,20 @@ public partial class Player : CharacterBody2D
 			Oxygen--;
 			//GD.Print(Oxygen);
 			return 0;
+		}
+		return timer;
+	}
+	
+	private int EnemyDamageHandling(int timer){
+		for(int i = 0; i < GetSlideCollisionCount(); i++){
+			KinematicCollision2D collision = GetSlideCollision(i);
+			Node collider = (Node)collision.GetCollider();
+			if(collider.IsInGroup("Enemy")){
+				if((timer % 100) == 0){
+					Health -= 5;
+					return 0;
+				}
+			}
 		}
 		return timer;
 	}
