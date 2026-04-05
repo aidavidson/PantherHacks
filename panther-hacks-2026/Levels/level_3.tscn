@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://csun701vgh5qf"]
 
-[ext_resource type="PackedScene" uid="uid://c1kvw8bgi5e72" path="res://Obstacles/obstacles_3.tscn" id="1_cb8d3"]
+[ext_resource type="PackedScene" uid="uid://c1kvw8bgi5e72" path="res://Object_Scenes/Obstacles/obstacles_3.tscn" id="1_cb8d3"]
 [ext_resource type="PackedScene" uid="uid://dakop4aqcfia1" path="res://Background/background3.tscn" id="2_5lru4"]
-[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Temp_Player/temp_user.tscn" id="3_ej5lj"]
+[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Object_Scenes/temp_user.tscn" id="3_ej5lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lru4"]
 size = Vector2(5000, 67.5)
