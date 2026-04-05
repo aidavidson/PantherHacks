@@ -9,14 +9,14 @@ var start_x: float
 var chasing: bool = false
 var player = null
 var damage_timer: float = 0.0
-var chase_timer: float = 0.0  # tracks how long we've been chasing
+var chase_timer: float = 0.0
 
 func _ready():
 	add_to_group("Enemy")
 	start_x = global_position.x
 	$DetectionArea.body_entered.connect(_on_body_entered)
 	$DetectionArea.body_exited.connect(_on_body_exited)
-	#$HitboxArea.body_entered.connect(_on_hit)
+	$HitboxArea.body_entered.connect(_on_hitbox_body_entered)
 
 func _physics_process(delta):
 	damage_timer -= delta
@@ -24,15 +24,12 @@ func _physics_process(delta):
 		damage_timer = 0
 
 	if chasing:
-		# safety check in case player gets deleted
 		if not is_instance_valid(player):
 			chasing = false
 			player = null
 		else:
-			# the longer we chase, the faster we get, up to max_speed
 			chase_timer += delta
 			var current_speed = min(speed + chase_timer * 20.0, max_speed)
-
 			if player.global_position.x > global_position.x:
 				velocity.x = current_speed
 			else:
@@ -59,17 +56,25 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func _on_hitbox_body_entered(body):
+	# If a harpoon hits this fish, kill it
+	if body.is_in_group("Harpoon"):
+		die()
+
+func die():
+	AudioManager.play("SFXHarpoonHit")
+	queue_free()
+
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		chasing = true
 		player = body
-		chase_timer = 0.0  # reset speed ramp when chase starts
+		chase_timer = 0.0
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		chasing = false
 		player = null
-		# head back toward start so patrol recenters correctly
 		if global_position.x > start_x:
 			moving_right = false
 		else:

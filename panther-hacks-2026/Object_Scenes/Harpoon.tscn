@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drcb862jweres"]
 
 [ext_resource type="Texture2D" uid="uid://di75okepglspu" path="res://Sprites/Harpoon.png" id="1_7yv5l"]
+[ext_resource type="Script" uid="uid://dsjdbhqq7j7hu" path="res://Object_Scenes/harpoon.gd" id="1_pbk5x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7yv5l"]
 radius = 8.999792
@@ -8,6 +9,7 @@ height = 126.0
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=795958797]
 gravity_scale = 0.0
+script = ExtResource("1_pbk5x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=681131327]
 texture = ExtResource("1_7yv5l")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://udiomanager"]
 
-[ext_resource type="Script" uid="uid://rna0ys7ym6wd" path="res://AudioManager.gd" id="1"]
+[ext_resource type="Script" uid="uid://rna0ys7ym6wd" path="res://Scripts/AudioManager.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://chfqn4q7hcwcl" path="res://Hacks_Audio/enemy_nearby.wav" id="2_yjd6q"]
 [ext_resource type="AudioStream" uid="uid://dvpr0a1kjm202" path="res://Hacks_Audio/boat_floating.wav" id="3_udwei"]
 [ext_resource type="AudioStream" uid="uid://cbwoqunf56jji" path="res://Hacks_Audio/underwater.wav" id="4_58b0s"]
