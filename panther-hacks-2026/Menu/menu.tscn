@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://didb5b6ryeo8j" path="res://Menu/start_menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://d7drtk6apq04" path="res://Sprites/background.png" id="2_ihied"]
+[ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://Fish/fish.tscn" id="3_raj00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w4re"]
 
 [node name="StartMenu" type="Control" unique_id=561693655]
 layout_mode = 3
@@ -68,6 +71,50 @@ horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=953149066]
 position = Vector2(0, 2)
+
+[node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("3_raj00")]
+position = Vector2(-334, -10)
+collision_mask = 1
+
+[node name="Fish2" parent="." unique_id=1266431706 instance=ExtResource("3_raj00")]
+position = Vector2(-203, 126)
+collision_mask = 1
+
+[node name="Fish3" parent="." unique_id=1294208712 instance=ExtResource("3_raj00")]
+position = Vector2(-93, -120)
+collision_mask = 1
+
+[node name="Fish4" parent="." unique_id=1868124387 instance=ExtResource("3_raj00")]
+position = Vector2(281, -79)
+collision_mask = 1
+
+[node name="Fish5" parent="." unique_id=1719560954 instance=ExtResource("3_raj00")]
+position = Vector2(280, 70)
+collision_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=432312773]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=506680348]
+position = Vector2(-587, 0)
+scale = Vector2(1, 33.12)
+shape = SubResource("RectangleShape2D_8w4re")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2126899511]
+position = Vector2(591, -16)
+scale = Vector2(1, 33.12)
+shape = SubResource("RectangleShape2D_8w4re")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1219985417]
+position = Vector2(-1.2647661e-12, 340)
+rotation = 1.5707964
+scale = Vector2(1, 57.559998)
+shape = SubResource("RectangleShape2D_8w4re")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1593161112]
+position = Vector2(-5.5422333e-13, -338)
+rotation = 1.5707964
+scale = Vector2(1, 57.559998)
+shape = SubResource("RectangleShape2D_8w4re")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelMenu/Level1" to="." method="_on_level_1_pressed"]
