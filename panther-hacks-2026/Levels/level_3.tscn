@@ -72,9 +72,9 @@ rotation = 1.5707964
 scale = Vector2(1069.5704, -68.958725)
 mesh = SubResource("QuadMesh_ay5qi")
 
-[node name="Node2D" parent="." unique_id=1045462043 instance=ExtResource("2_5lru4")]
+[node name="Background" parent="." unique_id=1045462043 instance=ExtResource("2_5lru4")]
 z_index = -1
-position = Vector2(2, 13)
+position = Vector2(0, 2)
 
 [node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("3_ej5lj")]
-position = Vector2(72, 365)
+position = Vector2(2583, 19)
