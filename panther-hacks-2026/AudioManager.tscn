@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bxk2osja85t2n"]
+
+[ext_resource type="Script" path="res://AudioManager.gd" id="1"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/enemy_nearby.wav" id="2_yjd6q"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/boat_floating.wav" id="3_udwei"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/underwater.wav" id="4_58b0s"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/harpoon_shoot.wav" id="5_dxjv2"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/harpoon_hit.wav" id="6_7oxt7"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/bubble_pop_collect.mp3" id="7_o4sf7"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/drop_baggage.wav" id="8_fget0"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/damage_player_grunt.wav" id="9_r4vh4"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/enemy detection.wav" id="10_5uxs8"]
+[ext_resource type="AudioStream" path="res://Hacks_Audio/underwater_ambiance.wav" id="11_dh53w"]
+
+[node name="AudioManager" type="Node" unique_id=872535496]
+script = ExtResource("1")
+
+[node name="MusicExplore" type="AudioStreamPlayer" parent="." unique_id=1676300234]
+
+[node name="enemy_nearby" type="AudioStreamPlayer" parent="." unique_id=1643314121]
+stream = ExtResource("2_yjd6q")
+
+[node name="boat_floating" type="AudioStreamPlayer" parent="." unique_id=544161836]
+stream = ExtResource("3_udwei")
+
+[node name="underwater" type="AudioStreamPlayer" parent="." unique_id=1891387052]
+stream = ExtResource("4_58b0s")
+
+[node name="BoatFloating" type="AudioStreamPlayer" parent="." unique_id=55662205]
+
+[node name="harpoon_shoot" type="AudioStreamPlayer" parent="." unique_id=164027803]
+stream = ExtResource("5_dxjv2")
+
+[node name="harpoon_hit" type="AudioStreamPlayer" parent="." unique_id=263178039]
+stream = ExtResource("6_7oxt7")
+
+[node name="bubble_pop_collect" type="AudioStreamPlayer" parent="." unique_id=1916372799]
+stream = ExtResource("7_o4sf7")
+
+[node name="SFXRescueFish" type="AudioStreamPlayer" parent="." unique_id=69099857]
+
+[node name="drop_baggage" type="AudioStreamPlayer" parent="." unique_id=1322873539]
+stream = ExtResource("8_fget0")
+
+[node name="damage_player_grunt" type="AudioStreamPlayer" parent="." unique_id=1861338918]
+stream = ExtResource("9_r4vh4")
+
+[node name="enemy detection" type="AudioStreamPlayer" parent="." unique_id=1260094018]
+stream = ExtResource("10_5uxs8")
+
+[node name="underwater_ambiance" type="AudioStreamPlayer" parent="." unique_id=1342725525]
+stream = ExtResource("11_dh53w")
