@@ -11,6 +11,6 @@ public partial class Label : Godot.Label
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Text = "Health: " + Player.Instance.Health + "\nOxygen: " + Player.Instance.Oxygen + "\nTrash Collected: " + Player.Instance.objsInBag + "\nInvasive Species: ";
+		Text = "Health: " + Player.Instance.Health + "\nOxygen: " + Player.Instance.Oxygen + "\nTrash Collected: " + Player.Instance.objsInBag + "\nTotal Trash: " + Player.Instance.totalTrash;
 	}
 }
