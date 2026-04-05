@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="PantherHacks2026"
-run/main_scene="uid://csun701vgh5qf"
-config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+run/main_scene="uid://ud2cshh3odjd"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [dotnet]
 

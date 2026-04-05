@@ -27,7 +27,7 @@ position = Vector2(-1, 0)
 
 [node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("2_arsda")]
 z_index = 1
-position = Vector2(67, 365)
+position = Vector2(1753, 34)
 speed = 150
 
 [node name="Obstacles2" parent="." unique_id=2111334004 instance=ExtResource("3_arsda")]
