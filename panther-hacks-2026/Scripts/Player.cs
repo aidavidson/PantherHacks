@@ -57,8 +57,8 @@ public partial class Player : CharacterBody2D
 		projectileScene = GD.Load<PackedScene>("res://Object_Scenes/Harpoon.tscn");
 		
 		//default player aspects
-		playerSpeed = 300f;
-		Oxygen = 4;
+		playerSpeed = 600f;
+		Oxygen = 100;
 		Health = 100;
 		objsInBag = 0;
 		totalTrash = 0;
@@ -71,7 +71,7 @@ public partial class Player : CharacterBody2D
 	{
 		
 		if(Oxygen > 0 && Health > 0){
-			//LevelCompleted();
+			LevelCompleted();
 			HandleMovement(delta);
 			OxygenTimer++;
 			OxygenTimer = OxygenManagement(OxygenTimer);
@@ -98,10 +98,15 @@ public partial class Player : CharacterBody2D
 	private void LevelCompleted(){
 		int threshhold = 1;
 		Node globalMenu = GetNodeOrNull("/root/StartMenu");
-		if(globalMenu == null){
-				GD.Print("null");
-		}
 		int Level = (int)globalMenu.Get("Level");
+		GD.Print(Level);
+		if(Level == 1){
+			threshhold = 15;
+		}else if(Level == 2){
+			threshhold = 20;
+		}else if(Level == 3){
+			threshhold = 25;
+		}
 		if(totalTrash == threshhold){
 			
 			GD.Print("hello");

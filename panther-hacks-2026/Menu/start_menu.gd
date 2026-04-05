@@ -4,6 +4,7 @@ extends Control
 @onready var levelMenu := $LevelMenu
 static var level2Unlocked = false
 static var level3Unlocked = false
+static var Level = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,11 +22,13 @@ func _on_play_pressed() -> void:
 
 
 func _on_level_1_pressed() -> void:
+	Level = 1
 	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 
 func _on_level_2_pressed() -> void:
 	if level2Unlocked:
+		Level = 2
 		get_tree().change_scene_to_file("res://Levels/level_2.tscn")
 	else:
 		if not $LevelMenu/Level2/Label.visible:
@@ -36,6 +39,7 @@ func _on_level_2_pressed() -> void:
 
 func _on_level_3_pressed() -> void:
 	if level3Unlocked:
+		Level = 2
 		get_tree().change_scene_to_file("res://Levels/level_3.tscn")
 	else:
 		if not $LevelMenu/Level3/Label.visible:

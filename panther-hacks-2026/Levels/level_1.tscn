@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bcdf5uvgchy1v" path="res://Background/background.tscn" id="2_dilhk"]
 [ext_resource type="PackedScene" uid="uid://cwfmyylcbvuxb" path="res://Object_Scenes/Obstacles/obstacles.tscn" id="3_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://5iqambtbadtv" path="res://Object_Scenes/Player.tscn" id="3_rf6l5"]
-[ext_resource type="Script" uid="uid://c5xyksmhd7nuw" path="res://Scripts/Player.cs" id="4_rf6l5"]
-[ext_resource type="PackedScene" uid="uid://2l5mw1hsoisb" path="res://Object_Scenes/trash.tscn" id="5_syshm"]
+[ext_resource type="PackedScene" uid="uid://bugdc1k8jrksk" path="res://Object_Scenes/boat.tscn" id="5_rfktq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6uo5"]
 size = Vector2(2003, 67)
@@ -81,7 +80,6 @@ position = Vector2(0, 1)
 
 [node name="Player" parent="." unique_id=1317044330 instance=ExtResource("3_rf6l5")]
 position = Vector2(952, 240)
-script = ExtResource("4_rf6l5")
 
-[node name="Trash" parent="." unique_id=1892575645 instance=ExtResource("5_syshm")]
-position = Vector2(860, 512)
+[node name="Boat" parent="." unique_id=534186582 instance=ExtResource("5_rfktq")]
+position = Vector2(979, -151)

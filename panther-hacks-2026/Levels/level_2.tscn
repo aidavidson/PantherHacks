@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ud2cshh3odjd"]
 
-[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Object_Scenes/temp_user.tscn" id="2_arsda"]
 [ext_resource type="PackedScene" uid="uid://ciru5poc6apeb" path="res://Background/background2.tscn" id="2_kbe2v"]
 [ext_resource type="PackedScene" uid="uid://o7p4lhy35ajs" path="res://Object_Scenes/Obstacles/obstacles_2.tscn" id="3_arsda"]
+[ext_resource type="PackedScene" uid="uid://5iqambtbadtv" path="res://Object_Scenes/Player.tscn" id="3_dgq3b"]
+[ext_resource type="PackedScene" uid="uid://bugdc1k8jrksk" path="res://Object_Scenes/boat.tscn" id="4_dgq3b"]
+[ext_resource type="Script" uid="uid://ddehbtlhx0d7h" path="res://Scripts/Boat.cs" id="5_bcgyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgq3b"]
 size = Vector2(3497, 67)
@@ -24,11 +26,6 @@ size = Vector2(999, 69)
 [node name="Background2" parent="." unique_id=1045462043 instance=ExtResource("2_kbe2v")]
 z_index = -1
 position = Vector2(-1, 0)
-
-[node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("2_arsda")]
-z_index = 1
-position = Vector2(1753, 34)
-speed = 150
 
 [node name="Obstacles2" parent="." unique_id=2111334004 instance=ExtResource("3_arsda")]
 position = Vector2(0, 1)
@@ -81,3 +78,10 @@ position = Vector2(-794.56256, 706.9402)
 rotation = 1.5707964
 scale = Vector2(1069.5704, -68.958725)
 mesh = SubResource("QuadMesh_vltsr")
+
+[node name="Player" parent="." unique_id=1317044330 instance=ExtResource("3_dgq3b")]
+position = Vector2(1327, 92)
+
+[node name="Boat" parent="." unique_id=534186582 instance=ExtResource("4_dgq3b")]
+position = Vector2(1334, -169)
+script = ExtResource("5_bcgyv")
