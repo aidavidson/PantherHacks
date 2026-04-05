@@ -101,6 +101,9 @@ collision_mask = 2
 [node name="Trash5" parent="." unique_id=1151633311 instance=ExtResource("3_qatc3")]
 position = Vector2(799, 356)
 
+[node name="Trash6" parent="." unique_id=1094954121 instance=ExtResource("3_qatc3")]
+position = Vector2(799, 356)
+
 [node name="Node2D" parent="." unique_id=122337866 instance=ExtResource("6_qf4a7")]
 position = Vector2(-1560, 637)
 
@@ -120,7 +123,7 @@ position = Vector2(-482, -50)
 
 [node name="Boat" parent="." unique_id=534186582 instance=ExtResource("8_lgr6r")]
 position = Vector2(594, -200)
-script = ExtResource("9_t6cqp")
+script = ExtResource("9_lgr6r")
 
 [editable path="Fish"]
 [editable path="Node2D"]

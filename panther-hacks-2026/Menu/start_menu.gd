@@ -4,7 +4,7 @@ extends Control
 @onready var levelMenu := $LevelMenu
 static var level2Unlocked = false
 static var level3Unlocked = false
-static var Level
+static var Level = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
