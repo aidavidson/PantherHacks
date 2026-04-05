@@ -142,6 +142,11 @@ public partial class Player : CharacterBody2D
 		velocity = velocity.Normalized() * playerSpeed;
 		Velocity = velocity;
 		MoveAndSlide();
+		if(Position.Y <= 0){
+			Vector2 pos = Position;
+			pos.Y = 1;
+			Position = pos;
+		}
 	}
 	
 	
