@@ -72,26 +72,6 @@ horizontal_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="." unique_id=953149066]
 position = Vector2(0, 2)
 
-[node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("3_raj00")]
-position = Vector2(-334, -10)
-collision_mask = 1
-
-[node name="Fish2" parent="." unique_id=1266431706 instance=ExtResource("3_raj00")]
-position = Vector2(-203, 126)
-collision_mask = 1
-
-[node name="Fish3" parent="." unique_id=1294208712 instance=ExtResource("3_raj00")]
-position = Vector2(-93, -120)
-collision_mask = 1
-
-[node name="Fish4" parent="." unique_id=1868124387 instance=ExtResource("3_raj00")]
-position = Vector2(281, -79)
-collision_mask = 1
-
-[node name="Fish5" parent="." unique_id=1719560954 instance=ExtResource("3_raj00")]
-position = Vector2(280, 70)
-collision_mask = 1
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=432312773]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=506680348]
@@ -116,7 +96,29 @@ rotation = 1.5707964
 scale = Vector2(1, 57.559998)
 shape = SubResource("RectangleShape2D_8w4re")
 
+[node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("3_raj00")]
+position = Vector2(-334, -10)
+collision_mask = 1
+
+[node name="Fish2" parent="." unique_id=759363919 instance=ExtResource("3_raj00")]
+position = Vector2(-121, -191)
+collision_mask = 1
+
+[node name="Fish3" parent="." unique_id=1201809356 instance=ExtResource("3_raj00")]
+position = Vector2(353, -90)
+collision_mask = 1
+
+[node name="Fish4" parent="." unique_id=787508430 instance=ExtResource("3_raj00")]
+position = Vector2(286, 183)
+collision_mask = 1
+
+[node name="Fish5" parent="." unique_id=1256497120 instance=ExtResource("3_raj00")]
+position = Vector2(-157, 191)
+collision_mask = 1
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelMenu/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="LevelMenu/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="LevelMenu/Level3" to="." method="_on_level_3_pressed"]
+
+[editable path="Fish"]

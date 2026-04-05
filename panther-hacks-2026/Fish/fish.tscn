@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctrfxiuxrswh8"]
 
-[ext_resource type="Script" uid="uid://wydy2pvhjedl" path="res://fish.gd" id="1_hgn23"]
+[ext_resource type="Script" uid="uid://wydy2pvhjedl" path="res://Fish/fish.gd" id="1_hgn23"]
 [ext_resource type="Texture2D" uid="uid://dndcuxc62ht8" path="res://Sprites/OrangeFish.png" id="1_xu20i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgn23"]
@@ -15,7 +15,7 @@ texture = ExtResource("1_xu20i")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1470076335]
 polygon = PackedVector2Array(-31, -20, -28, -20, -18, -10, -4, -24, 20, -24, 32, -12, 32, 8, 20, 20, -4, 20, -18, 7, -28, 17, -31, 17, -36, 12, -36, -16)
 
-[node name="Timer" type="Timer" parent="." unique_id=899052341]
+[node name="MovementCoolDown" type="Timer" parent="." unique_id=899052341]
 wait_time = 5.0
 autostart = true
 
@@ -24,4 +24,7 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=294631178]
 shape = SubResource("CircleShape2D_hgn23")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollideBuffer" type="Timer" parent="." unique_id=1732076530]
+one_shot = true
+
+[connection signal="timeout" from="MovementCoolDown" to="." method="_on_timer_timeout"]
