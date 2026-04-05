@@ -14,6 +14,7 @@ public partial class Trash : StaticBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		AddToGroup("Trash");
 		
 	}
 	private void OnBodyEntered(Node body){
