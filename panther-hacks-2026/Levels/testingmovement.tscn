@@ -83,4 +83,4 @@ rotation = 1.5397466
 shape = SubResource("CapsuleShape2D_ctxkg")
 
 [node name="Fish" parent="." unique_id=1078625834 instance=ExtResource("5_wbkl7")]
-position = Vector2(138, 146)
+position = Vector2(216, 261)
