@@ -1,34 +1,24 @@
 extends CharacterBody2D
 class_name Fish
 
-<<<<<<< HEAD
 @onready var timer := $MovementCoolDown
 @onready var area := $Area2D
 var prevVelocity
-=======
-@onready var timer := $Timer
-@onready var area := $Area2D
->>>>>>> f1efec44e638adffb340b3389307402c2522ef1d
 
 
 
 func _ready() -> void:
 	moveRandomly()
 
-<<<<<<< HEAD
 func _physics_process(delta: float) -> void:
 	$Sprite2D.flip_h = velocity[0] < 0
 	
-=======
-func _physics_process(_delta: float) -> void:
->>>>>>> f1efec44e638adffb340b3389307402c2522ef1d
 	var move = true
 	for body in area.get_overlapping_bodies():
 		if body is Trash:
 			move = false
 	if move:
 		move_and_slide()
-<<<<<<< HEAD
 		if $CollideBuffer.is_stopped():
 			for i in range(get_slide_collision_count()):
 				var collideAngle = get_slide_collision(i).get_angle()
@@ -39,8 +29,6 @@ func _physics_process(_delta: float) -> void:
 				$CollideBuffer.start()
 				
 	prevVelocity = velocity
-=======
->>>>>>> f1efec44e638adffb340b3389307402c2522ef1d
 	
 func moveRandomly():
 	var speed = randf_range(150, 250)
