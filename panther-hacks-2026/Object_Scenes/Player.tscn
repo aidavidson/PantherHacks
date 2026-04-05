@@ -4,13 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dkn6tyhc3yemi" path="res://Sprites/Diver1_big.png" id="2_ujbjk"]
 [ext_resource type="Script" uid="uid://dyimpidivs22y" path="res://Scripts/Label.cs" id="3_al63c"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qf4a7"]
-radius = 14.9987135
-height = 93.996124
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uep16"]
+size = Vector2(20, 82.998055)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4ej0"]
-radius = 14.992782
-height = 93.9923
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujbjk"]
+size = Vector2(23.832405, 90.0529)
 
 [node name="Player" type="CharacterBody2D" unique_id=1317044330]
 script = ExtResource("1_uep16")
@@ -23,14 +21,15 @@ texture = ExtResource("2_ujbjk")
 [node name="Area2D" type="Area2D" parent="." unique_id=703750827]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=655646582]
-position = Vector2(1, 1.0000057)
+position = Vector2(1.5003204, 1.0003275)
 rotation = -1.5701532
-shape = SubResource("CapsuleShape2D_qf4a7")
+shape = SubResource("RectangleShape2D_uep16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1757605005]
-position = Vector2(7.6293945e-06, -3.8146973e-06)
+position = Vector2(2.0163097, 1.9233971)
 rotation = -1.5672323
-shape = SubResource("CapsuleShape2D_c4ej0")
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_ujbjk")
 
 [node name="Label" type="Label" parent="." unique_id=1672551812]
 offset_left = -554.0

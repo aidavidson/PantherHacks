@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://csun701vgh5qf"]
 
 [ext_resource type="PackedScene" uid="uid://c1kvw8bgi5e72" path="res://Object_Scenes/Obstacles/obstacles_3.tscn" id="1_cb8d3"]
+[ext_resource type="Texture2D" uid="uid://pw8v7f5rbtdi" path="res://Sprites/7B73F568-C056-4ADB-934D-65B15EB33C66.jpeg" id="1_padch"]
 [ext_resource type="PackedScene" uid="uid://dakop4aqcfia1" path="res://Background/background3.tscn" id="2_5lru4"]
-[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Object_Scenes/temp_user.tscn" id="3_ej5lj"]
+[ext_resource type="PackedScene" uid="uid://bugdc1k8jrksk" path="res://Object_Scenes/boat.tscn" id="4_uwxw1"]
+[ext_resource type="PackedScene" uid="uid://5iqambtbadtv" path="res://Object_Scenes/Player.tscn" id="5_ay5qi"]
+[ext_resource type="PackedScene" uid="uid://bnpmn2ih54bio" path="res://Object_Scenes/EnemyFish.tscn" id="6_uwxw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lru4"]
 size = Vector2(5000, 67.5)
@@ -19,7 +22,15 @@ size = Vector2(999, 69)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ay5qi"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_padch"]
+size = Vector2(5046, 20)
+
 [node name="Level 3" type="Node2D" unique_id=476933456]
+
+[node name="7b73f568C0564adb934d65b15eb33c66" type="Sprite2D" parent="." unique_id=1619000470]
+position = Vector2(2487, -649.00006)
+scale = Vector2(0.8284505, 0.734188)
+texture = ExtResource("1_padch")
 
 [node name="Obstacles_3" parent="." unique_id=1533360288 instance=ExtResource("1_cb8d3")]
 
@@ -76,5 +87,25 @@ mesh = SubResource("QuadMesh_ay5qi")
 z_index = -1
 position = Vector2(0, 2)
 
-[node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("3_ej5lj")]
-position = Vector2(2583, 19)
+[node name="Boat" parent="." unique_id=534186582 instance=ExtResource("4_uwxw1")]
+position = Vector2(2323, -200)
+
+[node name="Player" parent="." unique_id=1317044330 instance=ExtResource("5_ay5qi")]
+position = Vector2(2328, 81)
+
+[node name="FishBlocker" type="StaticBody2D" parent="." unique_id=716301418]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishBlocker" unique_id=2006136276]
+position = Vector2(2513, 0)
+shape = SubResource("RectangleShape2D_padch")
+
+[node name="Node2D" parent="FishBlocker" unique_id=122337866 instance=ExtResource("6_uwxw1")]
+position = Vector2(2864, 219)
+
+[node name="Node2D2" parent="FishBlocker" unique_id=1279006654 instance=ExtResource("6_uwxw1")]
+position = Vector2(731, 202)
+
+[node name="Node2D3" parent="FishBlocker" unique_id=87329360 instance=ExtResource("6_uwxw1")]
+position = Vector2(1555, 362)

@@ -3,7 +3,7 @@ class_name Fish
 
 @onready var timer := $MovementCoolDown
 @onready var area := $Area2D
-var prevVelocity
+var prevVelocity = Vector2(0, 0)
 
 
 
