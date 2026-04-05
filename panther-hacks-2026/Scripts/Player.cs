@@ -132,7 +132,8 @@ public partial class Player : CharacterBody2D
 			velocity.Y = -1f;
 		}else if(Input.IsKeyPressed(Key.S)){
 			velocity.Y = +1f;
-		}else if(Input.IsKeyPressed(Key.A)){
+		}
+		if(Input.IsKeyPressed(Key.A)){
 			_sprite.Texture = _leftTexture;
 			velocity.X = -1f;
 		}else if(Input.IsKeyPressed(Key.D)){		
