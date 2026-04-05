@@ -1,35 +1,40 @@
 [gd_scene format=3 uid="uid://bnpmn2ih54bio"]
 
-[ext_resource type="Script" uid="uid://cw47vt8oqncek" path="res://enemy_fish.gd" id="1_s7mr6"]
-[ext_resource type="Texture2D" uid="uid://dn1mwbljpxqqf" path="res://icon.svg" id="2_kb3fs"]
+[ext_resource type="Script" path="res://enemy_fish.gd" id="1_s7mr6"]
+[ext_resource type="Texture2D" uid="uid://c2jftis22vcjr" path="res://Sprites/greenEnemyFish.png" id="2_kb3fs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kb3fs"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1g3r"]
+size = Vector2(120, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c1g3r"]
 radius = 300.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8hvdr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hvdr"]
+size = Vector2(140, 62)
 
 [node name="Node2D" type="Node2D" unique_id=122337866]
 position = Vector2(820, 353)
 
 [node name="EnemyFish" type="CharacterBody2D" parent="." unique_id=2121178822]
-position = Vector2(38, 0)
+position = Vector2(-287, -30)
 script = ExtResource("1_s7mr6")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="EnemyFish" unique_id=164917931]
 texture = ExtResource("2_kb3fs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFish" unique_id=77090441]
-shape = SubResource("CircleShape2D_kb3fs")
+position = Vector2(-4, 7)
+shape = SubResource("RectangleShape2D_c1g3r")
 
 [node name="DetectionArea" type="Area2D" parent="EnemyFish" unique_id=1721610905]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyFish/DetectionArea" unique_id=1978477469]
+position = Vector2(-3, 7)
 shape = SubResource("CircleShape2D_c1g3r")
 
 [node name="HitboxArea" type="Area2D" parent="EnemyFish" unique_id=502823126]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyFish/HitboxArea" unique_id=1218797468]
-position = Vector2(-4, 4)
-shape = SubResource("CircleShape2D_8hvdr")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFish/HitboxArea" unique_id=2048568629]
+position = Vector2(-3, 7)
+shape = SubResource("RectangleShape2D_8hvdr")

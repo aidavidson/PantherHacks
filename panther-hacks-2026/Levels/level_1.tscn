@@ -75,7 +75,7 @@ scale = Vector2(1069.5704, -89.35479)
 mesh = SubResource("QuadMesh_77x7w")
 
 [node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("1_n0qsc")]
-position = Vector2(948, 25)
+position = Vector2(1071, 38)
 
 [node name="Obstacles" parent="." unique_id=432730098 instance=ExtResource("3_3mhv4")]
 position = Vector2(0, 1)
