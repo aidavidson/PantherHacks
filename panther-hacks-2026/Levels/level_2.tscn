@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://ud2cshh3odjd"]
 
 [ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Object_Scenes/temp_user.tscn" id="2_arsda"]
+[ext_resource type="Texture2D" uid="uid://pw8v7f5rbtdi" path="res://Sprites/7B73F568-C056-4ADB-934D-65B15EB33C66.jpeg" id="2_bcgyv"]
 [ext_resource type="PackedScene" uid="uid://ciru5poc6apeb" path="res://Background/background2.tscn" id="2_kbe2v"]
 [ext_resource type="PackedScene" uid="uid://o7p4lhy35ajs" path="res://Object_Scenes/Obstacles/obstacles_2.tscn" id="3_arsda"]
+[ext_resource type="PackedScene" uid="uid://bugdc1k8jrksk" path="res://Object_Scenes/boat.tscn" id="5_fbld2"]
+[ext_resource type="PackedScene" uid="uid://2l5mw1hsoisb" path="res://Object_Scenes/trash.tscn" id="6_fbld2"]
+[ext_resource type="PackedScene" uid="uid://bnpmn2ih54bio" path="res://Object_Scenes/EnemyFish.tscn" id="7_s275v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgq3b"]
 size = Vector2(3497, 67)
@@ -19,16 +23,24 @@ size = Vector2(999, 69)
 
 [sub_resource type="QuadMesh" id="QuadMesh_vltsr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s275v"]
+size = Vector2(3595, 20)
+
 [node name="Level 2" type="Node2D" unique_id=1364169135]
 
 [node name="Background2" parent="." unique_id=1045462043 instance=ExtResource("2_kbe2v")]
 z_index = -1
-position = Vector2(-1, 0)
+position = Vector2(-0.9998779, 0)
+scale = Vector2(0.99999994, 1)
+
+[node name="7b73f568C0564adb934d65b15eb33c66" type="Sprite2D" parent="." unique_id=293303732]
+position = Vector2(1751, -451)
+scale = Vector2(0.5880649, 0.52115387)
+texture = ExtResource("2_bcgyv")
 
 [node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("2_arsda")]
 z_index = 1
-position = Vector2(1753, 34)
-speed = 150
+position = Vector2(1751, 90)
 
 [node name="Obstacles2" parent="." unique_id=2111334004 instance=ExtResource("3_arsda")]
 position = Vector2(0, 1)
@@ -81,3 +93,83 @@ position = Vector2(-794.56256, 706.9402)
 rotation = 1.5707964
 scale = Vector2(1069.5704, -68.958725)
 mesh = SubResource("QuadMesh_vltsr")
+
+[node name="Boat" parent="." unique_id=534186582 instance=ExtResource("5_fbld2")]
+position = Vector2(1759, -185)
+
+[node name="Trash" parent="." unique_id=1892575645 instance=ExtResource("6_fbld2")]
+position = Vector2(464, 587)
+
+[node name="FishBlocker" type="StaticBody2D" parent="." unique_id=1623369970]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishBlocker" unique_id=892561218]
+position = Vector2(1787.5, 0)
+shape = SubResource("RectangleShape2D_s275v")
+
+[node name="Trash" parent="FishBlocker" unique_id=89867608 instance=ExtResource("6_fbld2")]
+position = Vector2(80, 361)
+
+[node name="Trash2" parent="FishBlocker" unique_id=602327787 instance=ExtResource("6_fbld2")]
+position = Vector2(63, 936)
+
+[node name="Trash3" parent="FishBlocker" unique_id=1588884152 instance=ExtResource("6_fbld2")]
+position = Vector2(230, 928)
+
+[node name="Trash4" parent="FishBlocker" unique_id=268937972 instance=ExtResource("6_fbld2")]
+position = Vector2(700, 932)
+
+[node name="Trash5" parent="FishBlocker" unique_id=756675539 instance=ExtResource("6_fbld2")]
+position = Vector2(242, 753)
+
+[node name="Trash6" parent="FishBlocker" unique_id=1335093296 instance=ExtResource("6_fbld2")]
+position = Vector2(1317, 924)
+
+[node name="Trash7" parent="FishBlocker" unique_id=79622869 instance=ExtResource("6_fbld2")]
+position = Vector2(1492, 611)
+
+[node name="Trash8" parent="FishBlocker" unique_id=1333586175 instance=ExtResource("6_fbld2")]
+position = Vector2(2370, 944)
+
+[node name="Trash9" parent="FishBlocker" unique_id=1262302448 instance=ExtResource("6_fbld2")]
+position = Vector2(1737, 944)
+
+[node name="Trash10" parent="FishBlocker" unique_id=1306192080 instance=ExtResource("6_fbld2")]
+position = Vector2(2166, 753)
+
+[node name="Trash11" parent="FishBlocker" unique_id=1514608901 instance=ExtResource("6_fbld2")]
+position = Vector2(2658, 982)
+
+[node name="Trash12" parent="FishBlocker" unique_id=1143260437 instance=ExtResource("6_fbld2")]
+position = Vector2(2749, 974)
+
+[node name="Trash13" parent="FishBlocker" unique_id=729953529 instance=ExtResource("6_fbld2")]
+position = Vector2(3466, 961)
+
+[node name="Trash14" parent="FishBlocker" unique_id=265034827 instance=ExtResource("6_fbld2")]
+position = Vector2(3441, 820)
+
+[node name="Trash15" parent="FishBlocker" unique_id=195437366 instance=ExtResource("6_fbld2")]
+position = Vector2(197, 174)
+
+[node name="Trash16" parent="FishBlocker" unique_id=657045441 instance=ExtResource("6_fbld2")]
+position = Vector2(850, 395)
+
+[node name="Trash17" parent="FishBlocker" unique_id=1616743354 instance=ExtResource("6_fbld2")]
+position = Vector2(1912, 670)
+
+[node name="Trash18" parent="FishBlocker" unique_id=1529252448 instance=ExtResource("6_fbld2")]
+position = Vector2(2620, 374)
+
+[node name="Trash19" parent="FishBlocker" unique_id=1275997697 instance=ExtResource("6_fbld2")]
+position = Vector2(2041, 357)
+
+[node name="Trash20" parent="FishBlocker" unique_id=1723817731 instance=ExtResource("6_fbld2")]
+position = Vector2(3066, 316)
+
+[node name="Node2D" parent="FishBlocker" unique_id=122337866 instance=ExtResource("7_s275v")]
+position = Vector2(442, 286)
+
+[node name="Node2D2" parent="FishBlocker" unique_id=528007426 instance=ExtResource("7_s275v")]
+position = Vector2(1712, 503)

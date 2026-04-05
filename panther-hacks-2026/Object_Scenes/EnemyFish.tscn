@@ -1,27 +1,32 @@
 [gd_scene format=3 uid="uid://bnpmn2ih54bio"]
 
 [ext_resource type="Script" uid="uid://cw47vt8oqncek" path="res://Scripts/enemy_fish.gd" id="1_s7mr6"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="2_kb3fs"]
+[ext_resource type="Texture2D" uid="uid://d1kt5b3s1h4qo" path="res://Sprites/82FE71A2-E522-4134-9762-1532860F67E4-removebg-preview.png" id="2_xdg4d"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kb3fs"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rcenh"]
+radius = 25.010962
+height = 142.0549
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c1g3r"]
 radius = 300.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8hvdr"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdg4d"]
+radius = 16.012138
+height = 123.96529
 
 [node name="Node2D" type="Node2D" unique_id=122337866]
-position = Vector2(820, 353)
 
 [node name="EnemyFish" type="CharacterBody2D" parent="." unique_id=2121178822]
 position = Vector2(38, 0)
 script = ExtResource("1_s7mr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="EnemyFish" unique_id=164917931]
-texture = ExtResource("2_kb3fs")
+texture = ExtResource("2_xdg4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFish" unique_id=77090441]
-shape = SubResource("CircleShape2D_kb3fs")
+position = Vector2(0, 3)
+rotation = 1.5471517
+shape = SubResource("CapsuleShape2D_rcenh")
 
 [node name="DetectionArea" type="Area2D" parent="EnemyFish" unique_id=1721610905]
 
@@ -32,4 +37,5 @@ shape = SubResource("CircleShape2D_c1g3r")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyFish/HitboxArea" unique_id=1218797468]
 position = Vector2(-4, 4)
-shape = SubResource("CircleShape2D_8hvdr")
+rotation = 1.5571748
+shape = SubResource("CapsuleShape2D_xdg4d")

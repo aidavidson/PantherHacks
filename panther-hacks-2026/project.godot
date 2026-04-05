@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PantherHacks2026"
-run/main_scene="uid://ud2cshh3odjd"
+run/main_scene="uid://do24q33chjaht"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
