@@ -186,6 +186,7 @@ public partial class Player : CharacterBody2D
 		float speed = 500f;
 		projectile.LinearVelocity = Direction * speed;
 		GetParent().AddChild(projectile);
+		//hello
 	}
 	
 	
