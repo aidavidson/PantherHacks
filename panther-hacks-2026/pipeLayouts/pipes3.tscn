@@ -11,6 +11,13 @@ texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(11.565233, 161.8232, 21.098112, 7.56221)
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=367052513]
+position = Vector2(58, 287)
+scale = Vector2(5.47619, 3.9345224)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(11.565233, 161.8232, 21.098112, 7.56221)
+
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1889450309]
 position = Vector2(157.77519, 361.82993)
 rotation = 4.712389
@@ -407,13 +414,6 @@ texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 20.025791, 7.386261)
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1292309300]
-position = Vector2(12.194257, 287)
-scale = Vector2(4.7222977, 3.9345224)
-texture = ExtResource("2_xqit8")
-region_enabled = true
-region_rect = Rect2(6.4273186, 177.3443, 5.430827, 9.3580475)
-
 [node name="Sprite2D57" type="Sprite2D" parent="." unique_id=564336106]
 position = Vector2(839.00006, 386)
 scale = Vector2(4.7222977, 3.9345224)
@@ -452,6 +452,13 @@ region_rect = Rect2(6.4273186, 177.3443, 5.430827, 9.3580475)
 
 [node name="Sprite2D138" type="Sprite2D" parent="." unique_id=643086081]
 position = Vector2(2246, 649.4762)
+scale = Vector2(5.0999975, 3.9345224)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
+
+[node name="Sprite2D289" type="Sprite2D" parent="." unique_id=571199756]
+position = Vector2(2211, 649)
 scale = Vector2(5.0999975, 3.9345224)
 texture = ExtResource("2_xqit8")
 region_enabled = true
@@ -572,6 +579,13 @@ texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
 
+[node name="Sprite2D309" type="Sprite2D" parent="." unique_id=98302510]
+position = Vector2(2658, 719.00006)
+scale = Vector2(4.950001, 3.9345224)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
+
 [node name="Sprite2D142" type="Sprite2D" parent="." unique_id=205267889]
 position = Vector2(2529, 719)
 scale = Vector2(5.349999, 3.9345224)
@@ -623,21 +637,21 @@ region_enabled = true
 region_rect = Rect2(6.4273186, 177.3443, 5.430827, 9.3580475)
 
 [node name="Sprite2D144" type="Sprite2D" parent="." unique_id=1137889095]
-position = Vector2(2596.5002, 547)
+position = Vector2(2647.3057, 600.7053)
 scale = Vector2(5.2500224, 3.9999976)
 texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
 
 [node name="Sprite2D145" type="Sprite2D" parent="." unique_id=337284380]
-position = Vector2(2501, 547)
+position = Vector2(2551.8054, 600.7053)
 scale = Vector2(5.349999, 3.9345224)
 texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 16.228848, 7.386261)
 
 [node name="Sprite2D146" type="Sprite2D" parent="." unique_id=1924808660]
-position = Vector2(2447.0002, 547)
+position = Vector2(2497.8057, 600.7053)
 scale = Vector2(4.7222977, 3.9345224)
 texture = ExtResource("2_xqit8")
 region_enabled = true
@@ -697,7 +711,7 @@ region_enabled = true
 region_rect = Rect2(12.137947, 161.8232, 8.107452, 7.56221)
 
 [node name="Sprite2D98" type="Sprite2D" parent="." unique_id=85268597]
-position = Vector2(1775.4795, 837.8057)
+position = Vector2(1776.4796, 837.80566)
 rotation = -1.5707964
 scale = Vector2(4.7222977, 3.895896)
 texture = ExtResource("2_xqit8")
@@ -920,27 +934,9 @@ texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(82.224815, 177.12236, 5.286194, 10.010971)
 
-[node name="Sprite2D289" type="Sprite2D" parent="." unique_id=358870276]
-top_level = true
-position = Vector2(4142, 990.99994)
-rotation = -1.5707964
-scale = Vector2(4.7222977, 3.895896)
-texture = ExtResource("2_xqit8")
-region_enabled = true
-region_rect = Rect2(82.224815, 177.12236, 5.286194, 10.010971)
-
 [node name="Sprite2D320" type="Sprite2D" parent="." unique_id=101863464]
 top_level = true
 position = Vector2(4354, 943)
-rotation = -1.5707964
-scale = Vector2(4.7222977, 3.895896)
-texture = ExtResource("2_xqit8")
-region_enabled = true
-region_rect = Rect2(82.224815, 177.12236, 5.286194, 10.010971)
-
-[node name="Sprite2D309" type="Sprite2D" parent="." unique_id=1440525145]
-top_level = true
-position = Vector2(4863, 989)
 rotation = -1.5707964
 scale = Vector2(4.7222977, 3.895896)
 texture = ExtResource("2_xqit8")
@@ -1081,7 +1077,8 @@ region_enabled = true
 region_rect = Rect2(6.4273186, 177.3443, 5.430827, 9.3580475)
 
 [node name="Sprite2D22" type="Sprite2D" parent="." unique_id=739474520]
-position = Vector2(157.00003, 766)
+top_level = true
+position = Vector2(158.00005, 766)
 rotation = -1.5707964
 scale = Vector2(4.7222977, 3.9345224)
 texture = ExtResource("2_xqit8")
@@ -1793,17 +1790,17 @@ region_enabled = true
 region_rect = Rect2(12.137947, 161.8232, 16.917274, 7.56221)
 
 [node name="Sprite2D299" type="Sprite2D" parent="." unique_id=1994056913]
-position = Vector2(4862.125, 947.2464)
+position = Vector2(4862.125, 950.8126)
 rotation = 4.712389
-scale = Vector2(6.1558166, 3.7500596)
+scale = Vector2(6.6015983, 3.7500596)
 texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(12.137947, 161.8232, 16.917274, 7.56221)
 
 [node name="Sprite2D287" type="Sprite2D" parent="." unique_id=646072666]
-position = Vector2(4141.125, 938.2466)
+position = Vector2(4141.125, 944.59686)
 rotation = 4.712389
-scale = Vector2(6.1558166, 3.7500596)
+scale = Vector2(6.949604, 3.7500596)
 texture = ExtResource("2_xqit8")
 region_enabled = true
 region_rect = Rect2(12.137947, 161.8232, 16.917274, 7.56221)
@@ -1908,6 +1905,33 @@ region_rect = Rect2(33.15954, 192.79411, 11.517971, 10.170914)
 [node name="Sprite2D174" type="Sprite2D" parent="." unique_id=676241899]
 top_level = true
 position = Vector2(2150, 470.9999)
+rotation = -1.5707964
+scale = Vector2(3.219923, 3.2181652)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(33.15954, 192.79411, 11.517971, 10.170914)
+
+[node name="Sprite2D348" type="Sprite2D" parent="." unique_id=1095005935]
+top_level = true
+position = Vector2(2149.9998, 650)
+rotation = -1.5707964
+scale = Vector2(3.219923, 3.2181652)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(33.15954, 192.79411, 11.517971, 10.170914)
+
+[node name="Sprite2D349" type="Sprite2D" parent="." unique_id=2135570061]
+top_level = true
+position = Vector2(2713.0002, 720.99994)
+rotation = -1.5707964
+scale = Vector2(3.219923, 3.2181652)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(33.15954, 192.79411, 11.517971, 10.170914)
+
+[node name="Sprite2D350" type="Sprite2D" parent="." unique_id=644432763]
+top_level = true
+position = Vector2(2713.0002, 600.99994)
 rotation = -1.5707964
 scale = Vector2(3.219923, 3.2181652)
 texture = ExtResource("2_xqit8")
@@ -2519,6 +2543,13 @@ region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
 
 [node name="Sprite2D325" type="Sprite2D" parent="." unique_id=252501661]
 position = Vector2(4782, 845)
+scale = Vector2(5.5999904, 3.9345224)
+texture = ExtResource("2_xqit8")
+region_enabled = true
+region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
+
+[node name="Sprite2D347" type="Sprite2D" parent="." unique_id=242817418]
+position = Vector2(4806.0005, 845.00006)
 scale = Vector2(5.5999904, 3.9345224)
 texture = ExtResource("2_xqit8")
 region_enabled = true

@@ -21,7 +21,7 @@ size = Vector2(170, 32)
 size = Vector2(148, 694)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxyma"]
-size = Vector2(178, 28.5)
+size = Vector2(172.00003, 28.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtlop"]
 size = Vector2(176, 30)
@@ -45,7 +45,7 @@ size = Vector2(650, 30)
 size = Vector2(261, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1838o"]
-size = Vector2(170, 197)
+size = Vector2(334, 197)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5kj3"]
 size = Vector2(352, 30)
@@ -75,19 +75,19 @@ size = Vector2(170, 30)
 size = Vector2(170, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbtf"]
-size = Vector2(192, 30)
+size = Vector2(374, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhjsf"]
 size = Vector2(458.00012, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8712"]
-size = Vector2(211, 30)
+size = Vector2(212, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owrry"]
 size = Vector2(283, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i63nl"]
-size = Vector2(180.5, 28)
+size = Vector2(185, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce1yg"]
 size = Vector2(170, 186)
@@ -105,7 +105,7 @@ size = Vector2(169, 30)
 size = Vector2(206.99997, 291)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcfmf"]
-size = Vector2(214, 30)
+size = Vector2(396, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogifx"]
 size = Vector2(180, 169)
@@ -329,7 +329,7 @@ rotation = 1.5707964
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle99" unique_id=614247817]
-position = Vector2(274, 282)
+position = Vector2(277.00003, 282)
 shape = SubResource("RectangleShape2D_nxyma")
 
 [node name="Obstacle57" type="StaticBody2D" parent="." unique_id=114425242]
@@ -347,7 +347,7 @@ rotation = 1.5707964
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle58" unique_id=211866711]
-position = Vector2(274, 365.5)
+position = Vector2(192, 365.5)
 shape = SubResource("RectangleShape2D_1838o")
 
 [node name="Obstacle59" type="StaticBody2D" parent="." unique_id=679453122]
@@ -430,7 +430,7 @@ position = Vector2(1030, 563)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle68" unique_id=783564186]
-position = Vector2(285, 282)
+position = Vector2(376, 282)
 shape = SubResource("RectangleShape2D_bgbtf")
 
 [node name="Obstacle70" type="StaticBody2D" parent="." unique_id=306235409]
@@ -447,7 +447,7 @@ position = Vector2(2289, 265)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle71" unique_id=1379787077]
-position = Vector2(253.5, 282)
+position = Vector2(301, 335.5)
 shape = SubResource("RectangleShape2D_p8712")
 
 [node name="Obstacle72" type="StaticBody2D" parent="." unique_id=1329714309]
@@ -514,7 +514,7 @@ position = Vector2(2010, 369)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle79" unique_id=1287819861]
-position = Vector2(274.5, 281)
+position = Vector2(259.375, 281)
 shape = SubResource("RectangleShape2D_i63nl")
 
 [node name="Obstacle81" type="StaticBody2D" parent="." unique_id=159205388]
@@ -522,7 +522,7 @@ position = Vector2(2329, 95)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle81" unique_id=1588499579]
-position = Vector2(291, 282)
+position = Vector2(200, 282)
 shape = SubResource("RectangleShape2D_dcfmf")
 
 [node name="Obstacle82" type="StaticBody2D" parent="." unique_id=1311168440]
@@ -586,7 +586,7 @@ position = Vector2(1979, 188)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle116" unique_id=1483232075]
-position = Vector2(274.00003, 282)
+position = Vector2(259.5, 283)
 shape = SubResource("RectangleShape2D_i63nl")
 
 [node name="Obstacle117" type="StaticBody2D" parent="." unique_id=1354295403]
@@ -626,7 +626,7 @@ position = Vector2(2639, 305)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle121" unique_id=679072023]
-position = Vector2(274.00003, 282)
+position = Vector2(272.5, 282)
 shape = SubResource("RectangleShape2D_i63nl")
 
 [node name="Obstacle103" type="StaticBody2D" parent="." unique_id=1126024462]
@@ -678,7 +678,7 @@ position = Vector2(275, 282)
 shape = SubResource("RectangleShape2D_i63nl")
 
 [node name="Obstacle87" type="StaticBody2D" parent="." unique_id=926185228]
-position = Vector2(2278, 437)
+position = Vector2(2293, 438)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle87" unique_id=28316252]
@@ -719,4 +719,4 @@ position = Vector2(201, 282)
 shape = SubResource("RectangleShape2D_a8rpm")
 
 [node name="Pipes" parent="." unique_id=2014083885 instance=ExtResource("1_bldu0")]
-position = Vector2(-1, 0)
+position = Vector2(-1, 1)
