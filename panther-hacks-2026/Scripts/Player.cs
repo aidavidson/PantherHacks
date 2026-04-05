@@ -48,7 +48,7 @@ public partial class Player : CharacterBody2D
 		_rightTexture = GD.Load<Texture2D>("res://Sprites/Diver-1-Right.png");
 		_leftTexture = GD.Load<Texture2D>("res://Sprites/Diver1_big.png");
 		//harpoon scene
-		projectileScene = GD.Load<PackedScene>("res://Harpoon_Projectile/Harpoon.tscn");
+		projectileScene = GD.Load<PackedScene>("res://Object_Scenes/Harpoon.tscn");
 		
 		//default player aspects
 		playerSpeed = 300f;
@@ -64,6 +64,7 @@ public partial class Player : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		if(Oxygen > 0 && Health > 0){
+			LevelCompleted();
 			HandleMovement(delta);
 			OxygenTimer++;
 			OxygenTimer = OxygenManagement(OxygenTimer);
@@ -76,7 +77,6 @@ public partial class Player : CharacterBody2D
 				_timer = 0f;
 			}
 			
-			GD.Print("We Out");
 		}else{
 			//figure out later
 			GD.Print("I am not commented");
@@ -88,7 +88,27 @@ public partial class Player : CharacterBody2D
 	}
 	
 	
-	
+	private void LevelCompleted(){
+		
+		Node globalMenu = GetNodeOrNull("/root/StartMenu");
+		if(totalTrash == 1){
+			if(globalMenu == null){
+				GD.Print("null");
+			}
+			GD.Print("hello");
+			bool isLevel2Unlocked = (bool)globalMenu.Get("level2Unlocked");
+			if(isLevel2Unlocked == false){
+				globalMenu.Set("level2Unlocked", true);
+				GD.Print("Is Level 2 unlocked");
+				GD.Print(globalMenu.Get("level2Unlocked"));
+			}else{
+				globalMenu.Set("level3Unlocked", true);
+				GD.Print("Is Level 3 unlocked");
+				GD.Print(globalMenu.Get("level3Unlocked"));
+			}
+			GetTree().ChangeSceneToFile("res://Menu/menu.tscn");
+		}
+	}
 	
 	
 	

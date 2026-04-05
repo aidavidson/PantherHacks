@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://didb5b6ryeo8j" path="res://Menu/start_menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://d7drtk6apq04" path="res://Sprites/background.png" id="2_ihied"]
-[ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://Fish/fish.tscn" id="3_raj00"]
+[ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://Object_Scenes/fish.tscn" id="3_raj00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8w4re"]
 

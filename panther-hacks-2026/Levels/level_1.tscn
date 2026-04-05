@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c0j20g3c0y206"]
 
-[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Temp_Player/temp_user.tscn" id="1_n0qsc"]
 [ext_resource type="PackedScene" uid="uid://bcdf5uvgchy1v" path="res://Background/background.tscn" id="2_dilhk"]
-[ext_resource type="PackedScene" uid="uid://cwfmyylcbvuxb" path="res://Obstacles/obstacles.tscn" id="3_3mhv4"]
+[ext_resource type="PackedScene" uid="uid://cwfmyylcbvuxb" path="res://Object_Scenes/Obstacles/obstacles.tscn" id="3_3mhv4"]
+[ext_resource type="PackedScene" uid="uid://5iqambtbadtv" path="res://Object_Scenes/Player.tscn" id="3_rf6l5"]
+[ext_resource type="PackedScene" uid="uid://2l5mw1hsoisb" path="res://Object_Scenes/trash.tscn" id="4_syshm"]
+[ext_resource type="Script" uid="uid://2dh0c311aabe" path="res://Scripts/Trash.cs" id="5_syshm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6uo5"]
 size = Vector2(2003, 67)
@@ -74,8 +76,15 @@ rotation = 1.5707964
 scale = Vector2(1069.5704, -89.35479)
 mesh = SubResource("QuadMesh_77x7w")
 
-[node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("1_n0qsc")]
-position = Vector2(73, 336)
-
 [node name="Obstacles" parent="." unique_id=432730098 instance=ExtResource("3_3mhv4")]
 position = Vector2(0, 1)
+
+[node name="Player" parent="." unique_id=1317044330 instance=ExtResource("3_rf6l5")]
+position = Vector2(188, 341)
+
+[node name="Trash" parent="." unique_id=1892575645 instance=ExtResource("4_syshm")]
+position = Vector2(507, 467)
+script = ExtResource("5_syshm")
+
+[editable path="Player"]
+[editable path="Trash"]

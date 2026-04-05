@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnpmn2ih54bio"]
 
-[ext_resource type="Script" uid="uid://cw47vt8oqncek" path="res://enemy_fish.gd" id="1_s7mr6"]
-[ext_resource type="Texture2D" uid="uid://dn1mwbljpxqqf" path="res://icon.svg" id="2_kb3fs"]
+[ext_resource type="Script" uid="uid://cw47vt8oqncek" path="res://Scripts/enemy_fish.gd" id="1_s7mr6"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_kb3fs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kb3fs"]
 

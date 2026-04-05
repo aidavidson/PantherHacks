@@ -2,8 +2,8 @@ extends Control
 
 @onready var play := $Play
 @onready var levelMenu := $LevelMenu
-var level2Unlocked = false
-var level3Unlocked = false
+static var level2Unlocked = false
+static var level3Unlocked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
