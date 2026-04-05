@@ -58,7 +58,7 @@ public partial class Player : CharacterBody2D
 		
 		//default player aspects
 		playerSpeed = 300f;
-		Oxygen = 100;
+		Oxygen = 4;
 		Health = 100;
 		objsInBag = 0;
 		totalTrash = 0;
@@ -86,7 +86,7 @@ public partial class Player : CharacterBody2D
 			
 		}else{
 			//figure out later
-			GD.Print("I am not commented");
+			GetTree().ChangeSceneToFile("res://Menu/menu.tscn");
 		}
 		
 		
