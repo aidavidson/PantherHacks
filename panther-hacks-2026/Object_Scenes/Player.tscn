@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://5iqambtbadtv"]
+
+[ext_resource type="Script" uid="uid://c5xyksmhd7nuw" path="res://Scripts/Player.cs" id="1_uep16"]
+[ext_resource type="Texture2D" uid="uid://dkn6tyhc3yemi" path="res://Sprites/Diver1_big.png" id="2_ujbjk"]
+[ext_resource type="Script" uid="uid://dyimpidivs22y" path="res://Scripts/Label.cs" id="3_al63c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qf4a7"]
+radius = 14.9987135
+height = 93.996124
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4ej0"]
+radius = 14.992782
+height = 93.9923
+
+[node name="Player" type="CharacterBody2D" unique_id=1317044330]
+script = ExtResource("1_uep16")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=185832362]
+position = Vector2(-7.6293945e-06, 1.9073486e-06)
+scale = Vector2(0.47265625, 0.4375)
+texture = ExtResource("2_ujbjk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=703750827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=655646582]
+position = Vector2(1, 1.0000057)
+rotation = -1.5701532
+shape = SubResource("CapsuleShape2D_qf4a7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1757605005]
+position = Vector2(7.6293945e-06, -3.8146973e-06)
+rotation = -1.5672323
+shape = SubResource("CapsuleShape2D_c4ej0")
+
+[node name="Label" type="Label" parent="." unique_id=1672551812]
+offset_left = -554.0
+offset_top = -321.0
+offset_right = -415.0
+offset_bottom = -220.0
+text = "Health:100
+Oxygen:100
+Objects In Bag: 0/20
+Trash Collected:0"
+script = ExtResource("3_al63c")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=807933350]

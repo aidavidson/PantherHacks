@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://ctrfxiuxrswh8"]
 
+<<<<<<< HEAD:panther-hacks-2026/Fish/fish.tscn
 [ext_resource type="Script" uid="uid://wydy2pvhjedl" path="res://Fish/fish.gd" id="1_hgn23"]
+=======
+[ext_resource type="Script" uid="uid://wydy2pvhjedl" path="res://Scripts/fish.gd" id="1_hgn23"]
+>>>>>>> f1efec44e638adffb340b3389307402c2522ef1d:panther-hacks-2026/Object_Scenes/fish.tscn
 [ext_resource type="Texture2D" uid="uid://dndcuxc62ht8" path="res://Sprites/OrangeFish.png" id="1_xu20i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgn23"]
