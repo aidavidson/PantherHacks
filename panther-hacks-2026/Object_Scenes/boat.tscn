@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bugdc1k8jrksk"]
+
+[ext_resource type="Texture2D" uid="uid://jj4ds8hx7gm1" path="res://Sprites/Boat.png" id="2_henu8"]
+
+[node name="Boat" type="StaticBody2D" unique_id=534186582]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=973816960]
+texture = ExtResource("2_henu8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1839619449]
+polygon = PackedVector2Array(-9, -217, -9, 88, -235, 43, -233, 85, -205, 139, -92, 207, 5, 210, 87, 205, 138, 189, 200, 145, 234, 78, 237, 49, 8, 87, 11, -22, 184, -21, 9, -215)

@@ -1,0 +1,185 @@
+SCUBA DIVER GAME — AUDIO SOURCES REFERENCE
+All sources are free for game use (CC0 or CC-BY license).
+CC-BY requires crediting the author in your game credits.
+
+
+SOUND EFFECTS
+
+dive_splash
+  Description : Player entering water (sharp, full splash)
+  Bus         : SFX
+  Loop        : No
+  Volume      : -4 dB
+  Source      : freesound.org
+  Search for  : "water splash dive"
+  Direct link : https://freesound.org/search/?q=water+splash+dive
+
+swim_bubbles
+  Description : Looping underwater breathing/bubbles (tied to movement)
+  Bus         : Ambient
+  Loop        : YES — enable looping in Godot import settings
+  Volume      : -10 dB
+  Source      : freesound.org
+  Search for  : "scuba bubbles underwater loop"
+  Direct link : https://freesound.org/search/?q=scuba+bubbles+underwater
+
+harpoon_fire
+  Description : Mechanical thwunk + whoosh on fire input
+  Bus         : SFX
+  Loop        : No
+  Volume      : -3 dB
+  Source      : opengameart.org
+  Search for  : "harpoon fire" or "arrow whoosh"
+  Direct link : https://opengameart.org/content/search?keys=harpoon
+
+harpoon_hit
+  Description : Muffled underwater thud on enemy collision
+  Bus         : SFX
+  Loop        : No
+  Volume      : -5 dB
+  Source      : freesound.org
+  Search for  : "underwater impact thud"
+  Direct link : https://freesound.org/search/?q=underwater+impact+thud
+
+player_damage
+  Description : Diver hurt grunt or sting sound (0.5s cooldown built in)
+  Bus         : SFX
+  Loop        : No
+  Volume      : -4 dB
+  Source      : freesound.org
+  Search for  : "player hurt grunt" or "sting hit"
+  Direct link : https://freesound.org/search/?q=player+hurt+grunt
+
+collect_trash
+  Description : Satisfying bloop/pop when grabbing trash
+  Bus         : SFX
+  Loop        : No
+  Volume      : -6 dB
+  Pitch       : Randomised ±5% in code to keep it fresh
+  Source      : freesound.org
+  Search for  : "bubble pop" or "collect item bloop"
+  Direct link : https://freesound.org/search/?q=bubble+pop+collect
+
+rescue_fish
+  Description : Cheerful ascending chime when freeing a fish
+  Bus         : SFX
+  Loop        : No
+  Volume      : -5 dB
+  Source      : opengameart.org
+  Search for  : "rescue sparkle" or "item pickup jingle"
+  Direct link : https://opengameart.org/content/search?keys=pickup+sparkle
+
+dropoff_success
+  Description : Multi-note success chime when depositing at the boat
+  Bus         : SFX
+  Loop        : No
+  Volume      : -3 dB
+  Source      : freesound.org
+  Search for  : "success chime" or "deposit ding"
+  Direct link : https://freesound.org/search/?q=success+chime+deposit
+
+enemy_aggro
+  Description : Enemy fish spots player — also triggers danger music crossfade
+  Bus         : SFX
+  Loop        : No
+  Volume      : -4 dB
+  Source      : freesound.org
+  Search for  : "underwater growl" or "creature alert"
+  Direct link : https://freesound.org/search/?q=fish+growl+underwater+threat
+
+ambient_ocean
+  Description : Constant deep underwater ambience (always playing, very quiet)
+  Bus         : Ambient
+  Loop        : YES
+  Volume      : -14 dB
+  Source      : freesound.org
+  Search for  : "underwater ambience loop" or "ocean depth"
+  Direct link : https://freesound.org/search/?q=underwater+ambience+ocean+loop
+
+boat_engine
+  Description : Boat motor idle hum — volume controlled by distance to boat
+  Bus         : Ambient
+  Loop        : YES
+  Volume      : -30 dB to -8 dB (set dynamically in code)
+  Source      : freesound.org
+  Search for  : "boat motor idle loop" or "engine hum loop"
+  Direct link : https://freesound.org/search/?q=boat+motor+idle+loop
+
+
+MUSIC
+
+music_explore  (Gameplay / Default)
+  Description : Calm, curiosity-driven undersea loop.
+				Light marimba, soft synth pads, sparse percussion.
+				Loopable 2-4 minutes.
+  Bus         : Music
+  Loop        : YES
+  Volume      : -8 dB
+  Source 1    : incompetech.com (Kevin MacLeod — CC-BY)
+  Search for  : "underwater" or "tropical"
+  Link        : https://incompetech.com/music/royalty-free/index.html?keywords=underwater&Search=Search
+  Source 2    : opengameart.org
+  Search for  : "underwater exploration music"
+  Link        : https://opengameart.org/content/search?keys=underwater+music
+  Source 3    : itch.io free packs
+  Link        : https://itch.io/game-assets/free/tag-music/tag-underwater
+
+music_danger  (Enemy in Aggro Range)
+  Description : Tense, urgent undersea loop.
+				Low strings, heartbeat bass pulse, minor key.
+				Crossfades IN when enemy enters range.
+				Crossfades OUT 1.5s after enemy leaves range.
+  Bus         : Music
+  Loop        : YES
+  Volume      : -8 dB (starts at -80 dB, faded in by code)
+  Source 1    : incompetech.com (Kevin MacLeod — CC-BY)
+  Search for  : "tension" or "danger" or "stealthy"
+  Link        : https://incompetech.com/music/royalty-free/index.html?keywords=tension&Search=Search
+  Source 2    : opengameart.org
+  Search for  : "tense chase loop" or "danger music"
+  Link        : https://opengameart.org/content/search?keys=tense+music+loop
+  Source 3    : itch.io free packs
+  Link        : https://itch.io/game-assets/free/tag-music/tag-ocean
+
+
+GODOT AUDIO BUS SETUP
+
+Create these 4 buses in the Audio panel (bottom of Godot editor):
+
+  Master
+	Effects : Limiter (prevents clipping)
+	Volume  : 0 dB
+
+  Music     → sends to Master
+	Effects : Reverb (room size 0.3, wet 0.2)
+	Volume  : -5 dB
+
+  SFX       → sends to Master
+	Effects : Compressor (ratio 3:1, threshold -12 dB)
+	Volume  : -3 dB
+
+  Ambient   → sends to Master
+	Effects : Reverb (room size 0.8, wet 0.5) — simulates underwater space
+	Volume  : -10 dB
+
+Assign each AudioStreamPlayer's "Bus" property in the Inspector
+to match the bus names above.
+
+
+RECOMMENDED FILE FORMATS FOR GODOT
+
+  Music / long loops : .ogg  (smaller file, great for streaming)
+  Short SFX          : .wav  (lowest latency, best for one-shots)
+
+Enable "Loop" in the import settings for all looping files.
+Enable "Stream" for music files to avoid loading them fully into RAM.
+
+
+CREDITS TEMPLATE (if using CC-BY tracks)
+
+Music by Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+http://creativecommons.org/licenses/by/4.0/
+
+Sound effects sourced from Freesound.org and OpenGameArt.org
+(Individual track credits — list author names from download pages)
