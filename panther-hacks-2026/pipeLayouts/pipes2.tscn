@@ -222,7 +222,7 @@ region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
 
 [node name="Sprite2D83" type="Sprite2D" parent="." unique_id=679685417]
-position = Vector2(738, 845.00006)
+position = Vector2(694, 845.00006)
 scale = Vector2(4.950001, 3.9345224)
 texture = ExtResource("2_d6gwr")
 region_enabled = true
@@ -584,7 +584,7 @@ region_enabled = true
 region_rect = Rect2(6.4273186, 177.3443, 4.966407, 9.3580475)
 
 [node name="Sprite2D84" type="Sprite2D" parent="." unique_id=153780834]
-position = Vector2(789.00006, 845.99994)
+position = Vector2(734, 846)
 scale = Vector2(4.7222977, 3.9345224)
 texture = ExtResource("2_d6gwr")
 region_enabled = true
@@ -622,7 +622,7 @@ region_rect = Rect2(6.4273186, 177.3443, 4.9278708, 9.3580475)
 
 [node name="Sprite2D129" type="Sprite2D" parent="." unique_id=1358327795]
 top_level = true
-position = Vector2(2861.0002, 837.00006)
+position = Vector2(2952.7053, 834.4446)
 rotation = -1.5707964
 scale = Vector2(4.7222977, 3.9345224)
 texture = ExtResource("2_d6gwr")
@@ -720,7 +720,7 @@ region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
 
 [node name="Sprite2D143" type="Sprite2D" parent="." unique_id=2000322540]
-position = Vector2(2861.0002, 896.00006)
+position = Vector2(2952.7053, 893.4446)
 rotation = 4.712389
 scale = Vector2(4.9381394, 3.962843)
 texture = ExtResource("2_d6gwr")
@@ -744,7 +744,7 @@ region_enabled = true
 region_rect = Rect2(12.380935, 161.99915, 20.113941, 7.386261)
 
 [node name="Sprite2D144" type="Sprite2D" parent="." unique_id=688557265]
-position = Vector2(2861.0002, 951.00006)
+position = Vector2(2952.7053, 948.4446)
 rotation = 4.712389
 scale = Vector2(4.9381394, 3.962843)
 texture = ExtResource("2_d6gwr")
