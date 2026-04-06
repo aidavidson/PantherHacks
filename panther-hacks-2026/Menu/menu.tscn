@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://didb5b6ryeo8j" path="res://Menu/start_menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://d7drtk6apq04" path="res://Sprites/background.png" id="2_ihied"]
 [ext_resource type="PackedScene" uid="uid://ctrfxiuxrswh8" path="res://Object_Scenes/fish.tscn" id="3_raj00"]
+[ext_resource type="Texture2D" uid="uid://b2kq7uwgl8gpm" path="res://Sprites/A43A0880-5050-4BA3-B26D-F157BD081ED8-removebg-preview.png" id="4_8w4re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8w4re"]
 
@@ -110,6 +111,11 @@ position = Vector2(286, 183)
 
 [node name="Fish5" parent="." unique_id=1256497120 instance=ExtResource("3_raj00")]
 position = Vector2(-157, 191)
+
+[node name="A43a088050504ba3B26dF157bd081ed8RemovebgPreview" type="Sprite2D" parent="." unique_id=2144732578]
+position = Vector2(-5, -162)
+scale = Vector2(2, 2)
+texture = ExtResource("4_8w4re")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="LevelMenu/Level1" to="." method="_on_level_1_pressed"]

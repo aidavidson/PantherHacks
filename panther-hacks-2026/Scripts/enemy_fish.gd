@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-
 @export var speed: float = 200.0
 @export var max_speed: float = 300.0
 @export var damage: int = 10
-
 var moving_right: bool = true
 var start_x: float
 var chasing: bool = false
@@ -17,12 +15,9 @@ func _ready():
 	start_x = global_position.x
 	$DetectionArea.body_entered.connect(_on_body_entered)
 	$DetectionArea.body_exited.connect(_on_body_exited)
-	$HitboxArea.body_entered.connect(_on_hitbox_body_entered)
 
 func _physics_process(delta):
-	damage_timer -= delta
-	if damage_timer < 0:
-		damage_timer = 0
+	damage_timer = max(damage_timer - delta, 0.0)
 
 	if chasing:
 		if not is_instance_valid(player):
@@ -31,55 +26,31 @@ func _physics_process(delta):
 		else:
 			chase_timer += delta
 			var current_speed = min(speed + chase_timer * 20.0, max_speed)
-			if player.global_position.x > global_position.x:
-				velocity.x = current_speed
-			else:
-				velocity.x = -current_speed
-			if player.global_position.y > global_position.y:
-				velocity.y = current_speed
-			else:
-				velocity.y = -current_speed
+			var direction = (player.global_position - global_position).normalized()
+			velocity = direction * current_speed
 	else:
 		velocity.y = 0
-		if moving_right:
-			velocity.x = speed
-		else:
-			velocity.x = -speed
+		velocity.x = speed if moving_right else -speed
 		if global_position.x > start_x + 200:
 			moving_right = false
-		if global_position.x < start_x - 200:
+		elif global_position.x < start_x - 200:
 			moving_right = true
 
-	if velocity.x < 0:
-		$Sprite2D.flip_h = true
-	else:
-		$Sprite2D.flip_h = false
-
+	$Sprite2D.flip_h = velocity.x < 0
 	move_and_slide()
 
-func _on_hitbox_body_entered(body):
-	# If a harpoon hits this fish, kill it
-	if body.is_in_group("Harpoon"):
-		AudioManager.play("harpoon_hit.wav")
-		die()
-
 func die():
-	AudioManager.play("damage_player_grunt.wav")
+	#AudioManager.play("damage_player_grunt")
 	queue_free()
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		
 		chasing = true
 		player = body
 		chase_timer = 0.0
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
-		
 		chasing = false
 		player = null
-		if global_position.x > start_x:
-			moving_right = false
-		else:
-			moving_right = true
+		moving_right = global_position.x <= start_x

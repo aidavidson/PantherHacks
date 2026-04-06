@@ -20,7 +20,7 @@ public partial class Player : CharacterBody2D
 	private Sprite2D _sprite;
 	private Texture2D _leftTexture;
 	private Texture2D _rightTexture;
-	var audioManager = GetNode<Node>("/root/AudioManager");
+	
 	// timer and reload code
 	public int OxygenTimer;
 	public int DamageTimer;
@@ -38,7 +38,7 @@ public partial class Player : CharacterBody2D
 	public int objsInBag;
 	public int fishSaved;
 	public int totalTrash;
-	
+	//Node audioManager;
 	//manipulator of player class for the variables controlled by collisions
 	public static Player Instance;
 	
@@ -55,7 +55,7 @@ public partial class Player : CharacterBody2D
 		_leftTexture = GD.Load<Texture2D>("res://Sprites/Diver1_big.png");
 		//harpoon scene
 		projectileScene = GD.Load<PackedScene>("res://Object_Scenes/Harpoon.tscn");
-		
+		//var audioManager = GetNode<Node>("/root/AudioManager");
 		//default player aspects
 		playerSpeed = 600f;
 		Oxygen = 100;
@@ -174,7 +174,7 @@ public partial class Player : CharacterBody2D
 			if(collider.IsInGroup("Enemy")){
 				if((timer % 100) == 0){
 					Health -= 5;
-					audioManager.Call("play", "damage_player_grunt");
+					//audioManager.Call("play", "damage_player_grunt");
 					return 0;
 				}
 			}
@@ -187,7 +187,7 @@ public partial class Player : CharacterBody2D
 			KinematicCollision2D collision = GetSlideCollision(i);
 			Node collider = (Node)collision.GetCollider();
 			if(collider.IsInGroup("boat")){
-				audioManager.Call("play", "drop_baggage");
+				//audioManager.Call("play", "drop_baggage");
 				Oxygen = 100;
 				objsInBag = 0;
 			}
@@ -203,7 +203,7 @@ public partial class Player : CharacterBody2D
 		float speed = 500f;
 		projectile.LinearVelocity = Direction * speed;
 		GetParent().AddChild(projectile);
-		audioManager.Call("play", "harpoon_shoot");
+		//audioManager.Call("play", "harpoon_shoot");
 		//hello
 	}
 	

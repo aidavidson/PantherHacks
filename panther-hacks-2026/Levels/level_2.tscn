@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://ud2cshh3odjd"]
 
-[ext_resource type="PackedScene" uid="uid://cpennrmlscoyk" path="res://Object_Scenes/temp_user.tscn" id="2_arsda"]
+[ext_resource type="PackedScene" uid="uid://5iqambtbadtv" path="res://Object_Scenes/Player.tscn" id="1_s275v"]
 [ext_resource type="Texture2D" uid="uid://pw8v7f5rbtdi" path="res://Sprites/7B73F568-C056-4ADB-934D-65B15EB33C66.jpeg" id="2_bcgyv"]
 [ext_resource type="PackedScene" uid="uid://ciru5poc6apeb" path="res://Background/background2.tscn" id="2_kbe2v"]
 [ext_resource type="PackedScene" uid="uid://o7p4lhy35ajs" path="res://Object_Scenes/Obstacles/obstacles_2.tscn" id="3_arsda"]
 [ext_resource type="PackedScene" uid="uid://bugdc1k8jrksk" path="res://Object_Scenes/boat.tscn" id="5_fbld2"]
 [ext_resource type="PackedScene" uid="uid://2l5mw1hsoisb" path="res://Object_Scenes/trash.tscn" id="6_fbld2"]
+[ext_resource type="Script" uid="uid://ddehbtlhx0d7h" path="res://Scripts/Boat.cs" id="6_pml6m"]
 [ext_resource type="PackedScene" uid="uid://bnpmn2ih54bio" path="res://Object_Scenes/EnemyFish.tscn" id="7_s275v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgq3b"]
@@ -28,19 +29,19 @@ size = Vector2(3595, 20)
 
 [node name="Level 2" type="Node2D" unique_id=1364169135]
 
-[node name="Background2" parent="." unique_id=1045462043 instance=ExtResource("2_kbe2v")]
-z_index = -1
-position = Vector2(-0.9998779, 0)
-scale = Vector2(0.99999994, 1)
-
 [node name="7b73f568C0564adb934d65b15eb33c66" type="Sprite2D" parent="." unique_id=293303732]
 position = Vector2(1751, -451)
 scale = Vector2(0.5880649, 0.52115387)
 texture = ExtResource("2_bcgyv")
 
-[node name="Temp_User" parent="." unique_id=1841695308 instance=ExtResource("2_arsda")]
-z_index = 1
-position = Vector2(1751, 90)
+[node name="Player" parent="." unique_id=1317044330 instance=ExtResource("1_s275v")]
+position = Vector2(1753, 82)
+metadata/_edit_group_ = true
+
+[node name="Background2" parent="." unique_id=1045462043 instance=ExtResource("2_kbe2v")]
+z_index = -1
+position = Vector2(-0.9998779, 0)
+scale = Vector2(0.99999994, 1)
 
 [node name="Obstacles2" parent="." unique_id=2111334004 instance=ExtResource("3_arsda")]
 position = Vector2(0, 1)
@@ -95,7 +96,8 @@ scale = Vector2(1069.5704, -68.958725)
 mesh = SubResource("QuadMesh_vltsr")
 
 [node name="Boat" parent="." unique_id=534186582 instance=ExtResource("5_fbld2")]
-position = Vector2(1759, -185)
+position = Vector2(1761, -159)
+script = ExtResource("6_pml6m")
 
 [node name="Trash" parent="." unique_id=1892575645 instance=ExtResource("6_fbld2")]
 position = Vector2(464, 587)
@@ -173,3 +175,5 @@ position = Vector2(442, 286)
 
 [node name="Node2D2" parent="FishBlocker" unique_id=528007426 instance=ExtResource("7_s275v")]
 position = Vector2(1712, 503)
+
+[editable path="Player"]

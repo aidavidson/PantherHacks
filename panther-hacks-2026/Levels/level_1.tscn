@@ -30,6 +30,9 @@ size = Vector2(2078, 20)
 
 [node name="Level 1" type="Node2D" unique_id=945115660]
 
+[node name="Player" parent="." unique_id=1317044330 instance=ExtResource("3_rf6l5")]
+position = Vector2(952, 240)
+
 [node name="7b73f568C0564adb934d65b15eb33c66" type="Sprite2D" parent="." unique_id=971278939]
 position = Vector2(996.1898, -308.62503)
 scale = Vector2(0.35028496, 0.35028487)
@@ -90,9 +93,6 @@ mesh = SubResource("QuadMesh_77x7w")
 
 [node name="Obstacles" parent="." unique_id=432730098 instance=ExtResource("3_3mhv4")]
 position = Vector2(0, 1)
-
-[node name="Player" parent="." unique_id=1317044330 instance=ExtResource("3_rf6l5")]
-position = Vector2(952, 240)
 
 [node name="Boat" parent="." unique_id=534186582 instance=ExtResource("6_0urlm")]
 position = Vector2(947, -165)

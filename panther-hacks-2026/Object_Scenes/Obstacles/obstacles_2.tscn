@@ -6,10 +6,10 @@
 size = Vector2(170, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcgyv"]
-size = Vector2(170, 28)
+size = Vector2(170, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s275v"]
-size = Vector2(170, 29.999939)
+size = Vector2(166.99997, 29.999939)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vltsr"]
 size = Vector2(170, 169.99966)
@@ -39,7 +39,7 @@ size = Vector2(171.99997, 30)
 size = Vector2(170, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twgbp"]
-size = Vector2(170, 30)
+size = Vector2(116, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d623h"]
 size = Vector2(170, 30)
@@ -77,7 +77,7 @@ position = Vector2(-189, 255)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle22" unique_id=933630091]
-position = Vector2(274, 281)
+position = Vector2(274, 282.5)
 shape = SubResource("RectangleShape2D_bcgyv")
 
 [node name="Obstacle23" type="StaticBody2D" parent="." unique_id=1782593371]
@@ -86,7 +86,7 @@ rotation = 1.5707964
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle23" unique_id=1164681201]
-position = Vector2(274.00003, 281.9999)
+position = Vector2(272.50006, 281.99988)
 shape = SubResource("RectangleShape2D_s275v")
 
 [node name="Obstacle24" type="StaticBody2D" parent="." unique_id=1445527223]
@@ -172,7 +172,7 @@ position = Vector2(441, 563)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle34" unique_id=1898145972]
-position = Vector2(274.00003, 282)
+position = Vector2(247, 282)
 shape = SubResource("RectangleShape2D_twgbp")
 
 [node name="Obstacle35" type="StaticBody2D" parent="." unique_id=1704803991]
@@ -259,7 +259,7 @@ position = Vector2(272, 282)
 shape = SubResource("RectangleShape2D_3622m")
 
 [node name="Obstacle45" type="StaticBody2D" parent="." unique_id=215886512]
-position = Vector2(3143, 641)
+position = Vector2(3235, 640)
 rotation = 1.5707964
 metadata/_edit_group_ = true
 
