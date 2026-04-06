@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @export var speed: float = 200.0
 @export var max_speed: float = 300.0
 @export var damage: int = 10
@@ -59,20 +60,23 @@ func _physics_process(delta):
 func _on_hitbox_body_entered(body):
 	# If a harpoon hits this fish, kill it
 	if body.is_in_group("Harpoon"):
+		AudioManager.play("harpoon_hit.wav")
 		die()
 
 func die():
-	AudioManager.play("SFXHarpoonHit")
+	AudioManager.play("damage_player_grunt.wav")
 	queue_free()
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		
 		chasing = true
 		player = body
 		chase_timer = 0.0
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
+		
 		chasing = false
 		player = null
 		if global_position.x > start_x:

@@ -21,12 +21,10 @@ public partial class Trash : StaticBody2D
 		
 		if(body is Player){
 			if(Player.Instance.objsInBag < Player.Instance.bagCapacity){
-				GD.Print("Entered");
 				Player.Instance.objsInBag += 1;
 				Player.Instance.totalTrash +=1;
 				Player.Instance.playerSpeed -= 10f;
 				QueueFree();
-				GD.Print(Player.Instance.objsInBag);
 			}
 			
 		}

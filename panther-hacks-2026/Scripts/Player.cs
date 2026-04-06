@@ -20,7 +20,7 @@ public partial class Player : CharacterBody2D
 	private Sprite2D _sprite;
 	private Texture2D _leftTexture;
 	private Texture2D _rightTexture;
-	
+	var audioManager = GetNode<Node>("/root/AudioManager");
 	// timer and reload code
 	public int OxygenTimer;
 	public int DamageTimer;
@@ -108,18 +108,11 @@ public partial class Player : CharacterBody2D
 			threshhold = 25;
 		}
 		if(totalTrash == threshhold){
-			
-			GD.Print("hello");
-			
 			bool isLevel2Unlocked = (bool)globalMenu.Get("level2Unlocked");
 			if(isLevel2Unlocked == false){
 				globalMenu.Set("level2Unlocked", true);
-				GD.Print("Is Level 2 unlocked");
-				GD.Print(globalMenu.Get("level2Unlocked"));
 			}else{
 				globalMenu.Set("level3Unlocked", true);
-				GD.Print("Is Level 3 unlocked");
-				GD.Print(globalMenu.Get("level3Unlocked"));
 			}
 			GetTree().ChangeSceneToFile("res://Menu/menu.tscn");
 			//test comment for github
@@ -181,6 +174,7 @@ public partial class Player : CharacterBody2D
 			if(collider.IsInGroup("Enemy")){
 				if((timer % 100) == 0){
 					Health -= 5;
+					audioManager.Call("play", "damage_player_grunt");
 					return 0;
 				}
 			}
@@ -193,6 +187,7 @@ public partial class Player : CharacterBody2D
 			KinematicCollision2D collision = GetSlideCollision(i);
 			Node collider = (Node)collision.GetCollider();
 			if(collider.IsInGroup("boat")){
+				audioManager.Call("play", "drop_baggage");
 				Oxygen = 100;
 				objsInBag = 0;
 			}
@@ -208,6 +203,7 @@ public partial class Player : CharacterBody2D
 		float speed = 500f;
 		projectile.LinearVelocity = Direction * speed;
 		GetParent().AddChild(projectile);
+		audioManager.Call("play", "harpoon_shoot");
 		//hello
 	}
 	
